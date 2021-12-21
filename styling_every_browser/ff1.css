@@ -1,0 +1,21 @@
+div#slider {
+  width: 100%;
+}
+
+div#slider > input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 20px;
+  background: #201f1f;
+  border-radius: 4px;
+  border: 1px solid #6e6e6e;
+}
+
+div#slider > input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 13px;
+  height: 30px;
+  background-color: #3c3c3c;
+  border-radius: 5px;
+  border: 1px solid #6e6e6e;
+}

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="foo.css">
+
+<!-- input multiple - expands out to 2 sliders -->
+<!--class="multirange original" and class="multirange ghost" style="--low:11%; --high:79%;"-->
+<section class="demo">
+  <!-- so it's always low: 0, high: 100? -->
+  <input multiple type="range" value="0,100"/>
+  <!-- position handles at 10 and 80 -->
+  <input multiple type="range" value="10,80"/>
+  <!-- position handles at 40 and 60 -->
+  <input data-drag-middle multiple type="range" value="40,60"/>
+  <!-- overlap the handles -->
+  <input multiple type="range" value="50,50"/>
+</section>
+
+<!--SCRIPT!-->
+<!--If you don't include this, it doesn't know how to overlay the sliders-->
+<!--Weirdly enough-->
+<script src="foo.js"></script>

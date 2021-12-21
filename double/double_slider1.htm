@@ -1,0 +1,39 @@
+<title>jQuery UI Slider - Range slider</title>
+
+<!--
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+-->
+
+<link href="src/jquery-ui.css" rel="stylesheet">
+<link href="src/style.css" rel="stylesheet">
+<script src="src/jquery-1.12.4.js"></script>
+<script src="src/jquery-ui.js"></script>
+
+<script>
+  $(function () {
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [75, 300],
+      slide: function (event, ui) {
+        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      }
+    });
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+      " - $" + $("#slider-range").slider("values", 1));
+  });
+</script>
+
+Also: <a href="http://www.tutorialspark.com/jqueryUI/jQuery_UI_Slider_Events.php">jQuery UI Slider Events</a>
+<a href="https://jqueryui.com/slider/#range" target="_blank">Slider Range</a><br>
+
+<p>
+  <label for="amount">Price range:</label>
+  <input id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" type="text">
+</p>
+
+<div id="slider-range"></div>

@@ -1,0 +1,39 @@
+<title>Range slider, two handles, pop up+data</title>
+<style>
+  form {
+    margin: 60px 0 0 0 !important;
+  }
+
+  .ui-slider .ui-btn-inner {
+    padding: 4px 0 0 0 !important;
+  }
+
+  .ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+  }
+</style>
+
+<link href="https://demos.jquerymobile.com/1.4.2/css/themes/default/jquery.mobile-1.4.2.min.css" rel="stylesheet">
+<script src="https://demos.jquerymobile.com/1.4.2/js/jquery.js"></script>
+<script src="https://demos.jquerymobile.com/1.4.2/js/jquery.mobile-1.4.2.min.js"></script>
+
+<a href="https://codepen.io/Pierre_Hamel/pen/ocJEH">https://codepen.io/Pierre_Hamel/pen/ocJEH</a><br>
+<font color="red">Simple slider. Number above handle good. But number entry and handle # should match.</font>
+
+<form>
+  <div data-role="rangeslider">
+    <label for="range-1a">Range slider:</label>
+    <input data-popup-enabled="true" data-show-value="true" id="range-1a" max="100" min="0" name="range-1a" type="range"
+           value="40">
+    <label for="range-1b">Range slider:</label>
+    <input data-popup-enabled="true" data-show-value="true" id="range-1b" max="100" min="0" name="range-1b" type="range"
+           value="80">
+  </div>
+</form>

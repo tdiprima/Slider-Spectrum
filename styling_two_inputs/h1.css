@@ -1,0 +1,40 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/appearance */
+
+/* section containing value range */
+section.range-slider {
+  position: relative;
+  width: 200px;
+  height: 35px;
+  text-align: center;
+}
+
+/* this makes the sliders overlap */
+section.range-slider input {
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 15px;
+  width: 200px;
+  outline: none;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* this allows you to move the handles */
+section.range-slider input::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+}
+
+/* copy/pasted from webkit, and made it moz */
+section.range-slider input::-moz-range-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  outline: 0;
+  width: 9px;
+}

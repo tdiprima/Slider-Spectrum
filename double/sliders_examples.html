@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sliders - Examples &amp; Tutorials. Learn how to use Sliders · CoreUI</title>
+  <!--
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://coreui.io/docs/assets/css/coreui-docs.min.css" rel="stylesheet">
+  <link href="https://coreui.io/docs/assets/css/coreui-icons.css" rel="stylesheet">
+  <link href="https://coreui.io/docs/assets/css/ionRangeSlider.min.css" rel="stylesheet">
+-->
+  <link href="src/font-awesome.min.css" rel="stylesheet">
+  <link href="src/coreui-docs.min.css" rel="stylesheet">
+  <link href="src/coreui-icons.css" rel="stylesheet">
+  <link href="src/ionRangeSlider.min.css" rel="stylesheet">
+</head>
+<body>
+  <a href="https://coreui.io/docs/components/sliders/" target="_blank">Sliders</a><br>
+  <a href="https://github.com/IonDen/ion.rangeSlider" target="_blank">GitHub</a>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-12  col-xl-9 ">
+    <div class="card">
+    <div class="card-body">
+    <h1 class="docs-title" id="content">Sliders</h1>
+    <p class="docs-lead">Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of options.</p>
+    <div class="sharethis-inline-share-buttons my-3 st-center st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-total ">
+      <span class="st-label">12</span>
+      <span class="st-shares">
+        Shares
+      </span>
+    </div><div class="st-btn st-first" data-network="facebook" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/facebook.svg">
+      <span class="st-label">Share</span>
+    </div><div class="st-btn" data-network="twitter" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/twitter.svg">
+      <span class="st-label">Tweet</span>
+    </div><div class="st-btn" data-network="messenger" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/messenger.svg">
+      <span class="st-label">Share</span>
+    </div><div class="st-btn st-remove-label" data-network="reddit" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/reddit.svg">
+      <span class="st-label">Share</span>
+    </div><div class="st-btn st-remove-label" data-network="vk" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/vk.svg">
+      <span class="st-label">Share</span>
+    </div><div class="st-btn st-remove-label" data-network="email" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/email.svg">
+      <span class="st-label">Email</span>
+    </div><div class="st-btn st-last st-remove-label" data-network="sharethis" style="display: inline-block;">
+      <img src="https://platform-cdn.sharethis.com/img/sharethis.svg">
+      <span class="st-label">Share</span>
+    </div></div>
+    <h2 id="examples">Examples</h2>
+    <h3 class="float-left" id="start-without-params">Start without params</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: hidden;">10</span><span class="irs-max" style="visibility: visible;">100</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: -0.82101%;">10</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 0.885134%; width: 0%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 0%;"></span></span><input type="text" id="range_01" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_01"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_01'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">();</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="set-min-value-max-value-and-start-point">Set min value, max value and start point</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-1"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">100</span><span class="irs-max" style="visibility: visible;">1 000</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 47.664%;">550</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 0.885134%; width: 49.1149%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 49.1149%;"></span></span><input type="text" id="range_02" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_02"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_02'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">550</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="set-type-to-double-and-specify-range-also-showing-grid-and-adding-prefix-">Set type to double and specify range, also showing grid and adding prefix “$”</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-2 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">$0</span><span class="irs-max" style="visibility: visible;">$1 000</span><span class="irs-from" style="visibility: visible; left: 17.667%;">$200</span><span class="irs-to" style="visibility: visible; left: 76.5771%;">$800</span><span class="irs-single" style="visibility: hidden; left: 43.7751%;">$200 — $800</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.86582%;">250</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.88468%;">500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.83313%;">750</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -2.46178%;">1 000</span></span><span class="irs-bar" style="left: 20.5311%; width: 58.9378%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 19.6459%;"></span><span class="irs-slider to type_last" style="left: 78.5838%;"></span></span><input type="text" id="range_03" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_03"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_03'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'$'</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="set-up-range-with-negative-values">Set up range with negative values</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-3 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">-1 000</span><span class="irs-max" style="visibility: visible;">1 000</span><span class="irs-from" style="visibility: visible; left: 22.708%;">-500</span><span class="irs-to" style="visibility: visible; left: 72.2126%;">500</span><span class="irs-single" style="visibility: hidden; left: 44.2441%;">-500 — 500</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.81633%;">-1 000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -2.23924%;">-500</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.88468%;">500</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -2.46178%;">1 000</span></span><span class="irs-bar" style="left: 25.4426%; width: 49.1149%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 24.5574%;"></span><span class="irs-slider to type_last" style="left: 73.6723%;"></span></span><input type="text" id="range_04" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_04"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_04'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="o">-</span><span class="mi">500</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">500</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="using-step-250">Using step 250</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-4 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">-1 000</span><span class="irs-max" style="visibility: visible;">1 000</span><span class="irs-from" style="visibility: visible; left: 22.708%;">-500</span><span class="irs-to" style="visibility: visible; left: 72.2126%;">500</span><span class="irs-single" style="visibility: hidden; left: 44.2441%;">-500 — 500</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.81633%;">-1 000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -2.23924%;">-500</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.88468%;">500</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -2.46178%;">1 000</span></span><span class="irs-bar" style="left: 25.4426%; width: 49.1149%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 24.5574%;"></span><span class="irs-slider to type_last" style="left: 73.6723%;"></span></span><input type="text" id="range_05" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_05"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_05'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="o">-</span><span class="mi">500</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">250</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="set-up-range-with-fractional-values-using-fractional-step">Set up range with fractional values, using fractional step</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-5 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">-12.8</span><span class="irs-max" style="visibility: visible;">12.8</span><span class="irs-from" style="visibility: visible; left: 35.3123%;">-3.2</span><span class="irs-to" style="visibility: visible; left: 60.2595%;">3.2</span><span class="irs-single" style="visibility: hidden; left: 44.8954%;">-3.2 — 3.2</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.30964%;">-12.8</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.97521%;">-6.4</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.62065%;">6.4</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.95383%;">12.8</span></span><span class="irs-bar" style="left: 37.7213%; width: 24.5574%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 36.8361%;"></span><span class="irs-slider to type_last" style="left: 61.3936%;"></span></span><input type="text" id="range_06" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_06"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_06'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="o">-</span><span class="mf">12.8</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mf">12.8</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="o">-</span><span class="mf">3.2</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mf">0.1</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="set-up-you-own-numbers">Set up you own numbers</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-6 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">0</span><span class="irs-max" style="visibility: visible;">1 000 000</span><span class="irs-from" style="visibility: visible; left: 15.5506%;">10</span><span class="irs-to" style="visibility: visible; left: 78.735%;">100 000</span><span class="irs-single" style="visibility: hidden; left: 44.9551%;">10 — 100 000</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 12.5%"></span><span class="irs-grid-pol small" style="left: 8.333333333333334%"></span><span class="irs-grid-pol small" style="left: 4.166666666666668%"></span><span class="irs-grid-pol" style="left: 16.666666666666668%"></span><span class="irs-grid-text js-grid-text-1" style="left: 16.6667%; visibility: visible; margin-left: -1.30381%;">10</span><span class="irs-grid-pol small" style="left: 29.166666666666668%"></span><span class="irs-grid-pol small" style="left: 25%"></span><span class="irs-grid-pol small" style="left: 20.833333333333336%"></span><span class="irs-grid-pol" style="left: 33.333333333333336%"></span><span class="irs-grid-text js-grid-text-2" style="left: 33.3333%; visibility: visible; margin-left: -1.77404%;">100</span><span class="irs-grid-pol small" style="left: 45.833333333333336%"></span><span class="irs-grid-pol small" style="left: 41.66666666666667%"></span><span class="irs-grid-pol small" style="left: 37.5%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-3" style="left: 50%; visibility: visible; margin-left: -2.46178%;">1 000</span><span class="irs-grid-pol small" style="left: 62.5%"></span><span class="irs-grid-pol small" style="left: 58.333333333333336%"></span><span class="irs-grid-pol small" style="left: 54.16666666666667%"></span><span class="irs-grid-pol" style="left: 66.66666666666667%"></span><span class="irs-grid-text js-grid-text-4" style="left: 66.6667%; margin-left: -2.93075%;">10 000</span><span class="irs-grid-pol small" style="left: 79.16666666666667%"></span><span class="irs-grid-pol small" style="left: 75%"></span><span class="irs-grid-pol small" style="left: 70.83333333333334%"></span><span class="irs-grid-pol" style="left: 83.33333333333334%"></span><span class="irs-grid-text js-grid-text-5" style="left: 83.3333%; visibility: visible; margin-left: -3.40097%;">100 000</span><span class="irs-grid-pol small" style="left: 95.83333333333334%"></span><span class="irs-grid-pol small" style="left: 91.66666666666667%"></span><span class="irs-grid-pol small" style="left: 87.5%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-6" style="left: 100%; visibility: visible; margin-left: -4.08746%;">1 000 000</span></span><span class="irs-bar" style="left: 17.2568%; width: 65.4865%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 16.3716%;"></span><span class="irs-slider to type_last" style="left: 81.8581%;"></span></span><input type="text" id="range_07" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_07"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_07'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">]</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="using-any-strings-as-your-values">Using any strings as your values</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-7 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">zero</span><span class="irs-max" style="visibility: visible;">ten</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 47.7872%;">five</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.02424%;">zero</span><span class="irs-grid-pol small" style="left: 6.666666666666666%"></span><span class="irs-grid-pol small" style="left: 3.333333333333333%"></span><span class="irs-grid-pol" style="left: 10%"></span><span class="irs-grid-text js-grid-text-1" style="left: 10%; visibility: visible; margin-left: -1.78787%;">one</span><span class="irs-grid-pol small" style="left: 16.666666666666668%"></span><span class="irs-grid-pol small" style="left: 13.333333333333332%"></span><span class="irs-grid-pol" style="left: 20%"></span><span class="irs-grid-text js-grid-text-2" style="left: 20%; visibility: visible; margin-left: -1.76146%;">two</span><span class="irs-grid-pol small" style="left: 26.666666666666668%"></span><span class="irs-grid-pol small" style="left: 23.333333333333332%"></span><span class="irs-grid-pol" style="left: 30%"></span><span class="irs-grid-text js-grid-text-3" style="left: 30%; visibility: visible; margin-left: -2.33605%;">three</span><span class="irs-grid-pol small" style="left: 36.666666666666664%"></span><span class="irs-grid-pol small" style="left: 33.333333333333336%"></span><span class="irs-grid-pol" style="left: 40%"></span><span class="irs-grid-text js-grid-text-4" style="left: 40%; margin-left: -1.90983%;">four</span><span class="irs-grid-pol small" style="left: 46.666666666666664%"></span><span class="irs-grid-pol small" style="left: 43.333333333333336%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-5" style="left: 50%; visibility: visible; margin-left: -1.76901%;">five</span><span class="irs-grid-pol small" style="left: 56.666666666666664%"></span><span class="irs-grid-pol small" style="left: 53.333333333333336%"></span><span class="irs-grid-pol" style="left: 60%"></span><span class="irs-grid-text js-grid-text-6" style="left: 60%; visibility: visible; margin-left: -1.46097%;">six</span><span class="irs-grid-pol small" style="left: 66.66666666666667%"></span><span class="irs-grid-pol small" style="left: 63.333333333333336%"></span><span class="irs-grid-pol" style="left: 70%"></span><span class="irs-grid-text js-grid-text-7" style="left: 70%; visibility: visible; margin-left: -2.55104%;">seven</span><span class="irs-grid-pol small" style="left: 76.66666666666667%"></span><span class="irs-grid-pol small" style="left: 73.33333333333333%"></span><span class="irs-grid-pol" style="left: 80%"></span><span class="irs-grid-text js-grid-text-8" style="left: 80%; margin-left: -2.27696%;">eight</span><span class="irs-grid-pol small" style="left: 86.66666666666667%"></span><span class="irs-grid-pol small" style="left: 83.33333333333333%"></span><span class="irs-grid-pol" style="left: 90%"></span><span class="irs-grid-text js-grid-text-9" style="left: 90%; visibility: visible; margin-left: -1.97394%;">nine</span><span class="irs-grid-pol small" style="left: 96.66666666666667%"></span><span class="irs-grid-pol small" style="left: 93.33333333333333%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-10" style="left: 100%; visibility: visible; margin-left: -1.61814%;">ten</span></span><span class="irs-bar" style="left: 0.885134%; width: 49.1149%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 49.1149%;"></span></span><input type="text" id="range_08" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_08"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_08'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s1">'zero'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">,</span> <span class="s1">'four'</span><span class="p">,</span> <span class="s1">'five'</span><span class="p">,</span> <span class="s1">'six'</span><span class="p">,</span> <span class="s1">'seven'</span><span class="p">,</span> <span class="s1">'eight'</span><span class="p">,</span> <span class="s1">'nine'</span><span class="p">,</span> <span class="s1">'ten'</span><span class="p">]</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="one-more-example-with-strings">One more example with strings</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-8 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">January</span><span class="irs-max" style="visibility: visible;">December</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 25.0825%;">April</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -3.28027%;">January</span><span class="irs-grid-pol small" style="left: 6.0606060606060606%"></span><span class="irs-grid-pol small" style="left: 3.0303030303030303%"></span><span class="irs-grid-pol" style="left: 9.090909090909092%"></span><span class="irs-grid-text js-grid-text-1" style="left: 9.09091%; visibility: visible; margin-left: -3.63106%;">February</span><span class="irs-grid-pol small" style="left: 15.151515151515152%"></span><span class="irs-grid-pol small" style="left: 12.121212121212121%"></span><span class="irs-grid-pol" style="left: 18.181818181818183%"></span><span class="irs-grid-text js-grid-text-2" style="left: 18.1818%; visibility: visible; margin-left: -2.68307%;">March</span><span class="irs-grid-pol small" style="left: 24.242424242424242%"></span><span class="irs-grid-pol small" style="left: 21.212121212121215%"></span><span class="irs-grid-pol" style="left: 27.272727272727273%"></span><span class="irs-grid-text js-grid-text-3" style="left: 27.2727%; visibility: visible; margin-left: -2.11602%;">April</span><span class="irs-grid-pol small" style="left: 33.333333333333336%"></span><span class="irs-grid-pol small" style="left: 30.303030303030305%"></span><span class="irs-grid-pol" style="left: 36.36363636363637%"></span><span class="irs-grid-text js-grid-text-4" style="left: 36.3636%; margin-left: -1.93497%;">May</span><span class="irs-grid-pol small" style="left: 42.42424242424243%"></span><span class="irs-grid-pol small" style="left: 39.3939393939394%"></span><span class="irs-grid-pol" style="left: 45.45454545454546%"></span><span class="irs-grid-text js-grid-text-5" style="left: 45.4545%; visibility: visible; margin-left: -2.18643%;">June</span><span class="irs-grid-pol small" style="left: 51.515151515151516%"></span><span class="irs-grid-pol small" style="left: 48.48484848484849%"></span><span class="irs-grid-pol" style="left: 54.54545454545455%"></span><span class="irs-grid-text js-grid-text-6" style="left: 54.5455%; visibility: visible; margin-left: -1.92492%;">July</span><span class="irs-grid-pol small" style="left: 60.60606060606061%"></span><span class="irs-grid-pol small" style="left: 57.57575757575758%"></span><span class="irs-grid-pol" style="left: 63.63636363636364%"></span><span class="irs-grid-text js-grid-text-7" style="left: 63.6364%; visibility: visible; margin-left: -2.95966%;">August</span><span class="irs-grid-pol small" style="left: 69.6969696969697%"></span><span class="irs-grid-pol small" style="left: 66.66666666666667%"></span><span class="irs-grid-pol" style="left: 72.72727272727273%"></span><span class="irs-grid-text js-grid-text-8" style="left: 72.7273%; margin-left: -4.35652%;">September</span><span class="irs-grid-pol small" style="left: 78.7878787878788%"></span><span class="irs-grid-pol small" style="left: 75.75757575757576%"></span><span class="irs-grid-pol" style="left: 81.81818181818183%"></span><span class="irs-grid-text js-grid-text-9" style="left: 81.8182%; visibility: visible; margin-left: -3.36829%;">October</span><span class="irs-grid-pol small" style="left: 87.87878787878789%"></span><span class="irs-grid-pol small" style="left: 84.84848484848486%"></span><span class="irs-grid-pol" style="left: 90.90909090909092%"></span><span class="irs-grid-text js-grid-text-10" style="left: 90.9091%; visibility: visible; margin-left: -4.09877%;">November</span><span class="irs-grid-pol small" style="left: 96.96969696969697%"></span><span class="irs-grid-pol small" style="left: 93.93939393939395%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-11" style="left: 100%; visibility: visible; margin-left: -4.11386%;">December</span></span><span class="irs-bar" style="left: 0.885134%; width: 26.7899%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 26.7899%;"></span></span><input type="text" id="range_09" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_09"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_09'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="s1">'January'</span><span class="p">,</span> <span class="s1">'February'</span><span class="p">,</span> <span class="s1">'March'</span><span class="p">,</span> <span class="s1">'April'</span><span class="p">,</span> <span class="s1">'May'</span><span class="p">,</span> <span class="s1">'June'</span><span class="p">,</span> <span class="s1">'July'</span><span class="p">,</span> <span class="s1">'August'</span><span class="p">,</span> <span class="s1">'September'</span><span class="p">,</span> <span class="s1">'October'</span><span class="p">,</span> <span class="s1">'November'</span><span class="p">,</span> <span class="s1">'December'</span><span class="p">]</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="no-prettify-big-numbers-are-ugly-and-unreadable">No prettify. Big numbers are ugly and unreadable</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-9 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">1000</span><span class="irs-max" style="visibility: visible;">1000000</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 6.84773%;">100000</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.24301%;">1000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -3.20106%;">250750</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -3.2853%;">500500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -3.21489%;">750250</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -3.65243%;">1000000</span></span><span class="irs-bar" style="left: 0.885134%; width: 9.73448%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 9.73448%;"></span></span><input type="text" id="range_10" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_10"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_10'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">prettify_enabled</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="prettify-enabled-much-better">Prettify enabled. Much better!</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-10 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">1 000</span><span class="irs-max" style="visibility: visible;">1 000 000</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 16.3335%;">200 000</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.46178%;">1 000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -3.43367%;">250 750</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -3.50281%;">500 500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -3.43367%;">750 250</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -4.08746%;">1 000 000</span></span><span class="irs-bar" style="left: 0.885134%; width: 19.5673%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 19.5673%;"></span></span><input type="text" id="range_11" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_11"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_11'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">200000</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">prettify_enabled</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="dont-like-space-as-separator-use-anything-you-like">Don’t like space as separator? Use anything you like!</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-11 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">1.000</span><span class="irs-max" style="visibility: visible;">1.000.000</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 26.199%;">300.000</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.42531%;">1.000</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -3.41606%;">250.750</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -3.46132%;">500.500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -3.40097%;">750.250</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -4.00699%;">1.000.000</span></span><span class="irs-bar" style="left: 0.885134%; width: 29.4001%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 29.4001%;"></span></span><input type="text" id="range_12" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_12"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_12'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">300000</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">prettify_enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">prettify_separator</span><span class="p">:</span> <span class="s1">'.'</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="you-dont-like-default-prettify-function-use-your-own">You don’t like default prettify function? Use your own!</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-12 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">817</span><span class="irs-max" style="visibility: visible;">872428</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 36.3575%;">258691</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -1.896%;">859</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -2.81633%;">83002</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -2.7233%;">92274</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -2.69438%;">16555</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -3.29033%;">690625</span></span><span class="irs-bar" style="left: 0.885134%; width: 39.2329%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 39.2329%;"></span></span><input type="text" id="range_13" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_13"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_13'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">400000</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">prettify_enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">prettify</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">prettify</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">num</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="using-prefixes">Using prefixes</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-13 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">$0</span><span class="irs-max" style="visibility: hidden;">$10 000</span><span class="irs-from" style="visibility: visible; left: 7.20152%;">$1 000</span><span class="irs-to" style="visibility: visible; left: 95.0915%;">$10 000</span><span class="irs-single" style="visibility: hidden; left: 47.1584%;">$1 000 — $10 000</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -2.55231%;">2 500</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -2.57116%;">5 000</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -2.52842%;">7 500</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -2.93075%;">10 000</span></span><span class="irs-bar" style="left: 10.7081%; width: 88.4068%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from type_last" style="left: 9.82297%;"></span><span class="irs-slider to" style="left: 98.2297%;"></span></span><input type="text" id="range_14" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_14"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_14'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">step</span><span class="p">:</span> <span class="mi">9000</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'$'</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="using-postfixes">Using postfixes</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-14 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">-90°</span><span class="irs-max" style="visibility: visible;">90°</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 48.3077%;">0°</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -1.78284%;">-90</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.77907%;">-45</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -0.953032%;">0</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.42451%;">45</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.42828%;">90</span></span><span class="irs-bar" style="left: 0.885134%; width: 49.1149%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 49.1149%;"></span></span><input type="text" id="range_15" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_15"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_15'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'single'</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">postfix</span><span class="p">:</span> <span class="s1">'°'</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="whant-to-show-that-max-number-is-not-the-biggest-one">Whant to show that max number is not the biggest one?</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-15 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">Age 18</span><span class="irs-max" style="visibility: visible;">Age 70+</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 19.9841%;">Age 30</span></span><span class="irs-grid" style="width: 98.2297%; left: 0.785134%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -1.31009%;">18</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.30255%;">31</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.44212%;">44</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.37044%;">57</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.36793%;">70</span></span><span class="irs-bar" style="left: 0.885134%; width: 22.6684%;"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-slider single" style="left: 22.6684%;"></span></span><input type="text" id="range_16" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_16"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_16'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'Age '</span><span class="p">,</span>
+        <span class="na">max_postfix</span><span class="p">:</span> <span class="s1">'+'</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="taking-care-about-how-from-and-to-values-connect-use-decorate_both-option">Taking care about how from and to values connect? Use decorate_both option:</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-16"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">Weight: 100 million pounds</span><span class="irs-max" style="visibility: visible;">Weight: 200 million pounds</span><span class="irs-from" style="visibility: hidden; left: 33.8018%;">Weight: 145 million pounds</span><span class="irs-to" style="visibility: hidden; left: 43.6449%;">Weight: 155 million pounds</span><span class="irs-single" style="visibility: visible; left: 26.9551%;">Weight: 145 million pounds — Weight: 155 million pounds</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 45.0885%; width: 9.82297%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 44.2034%;"></span><span class="irs-slider to type_last" style="left: 54.0264%;"></span></span><input type="text" id="range_17" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_17"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_17'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">145</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">155</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'Weight: '</span><span class="p">,</span>
+        <span class="na">postfix</span><span class="p">:</span> <span class="s1">' million pounds'</span><span class="p">,</span>
+        <span class="na">decorate_both</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="remove-double-decoration">Remove double decoration</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-17"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">Weight: 100 million pounds</span><span class="irs-max" style="visibility: visible;">Weight: 200 million pounds</span><span class="irs-from" style="visibility: hidden; left: 33.8018%;">Weight: 145 million pounds</span><span class="irs-to" style="visibility: hidden; left: 43.6449%;">Weight: 155 million pounds</span><span class="irs-single" style="visibility: visible; left: 36.0176%;">Weight: 145 — 155 million pounds</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 45.0885%; width: 9.82297%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 44.2034%;"></span><span class="irs-slider to type_last" style="left: 54.0264%;"></span></span><input type="text" id="range_18" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_18"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_18'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">145</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">155</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'Weight: '</span><span class="p">,</span>
+        <span class="na">postfix</span><span class="p">:</span> <span class="s1">' million pounds'</span><span class="p">,</span>
+        <span class="na">decorate_both</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="use-your-own-separator-symbol-with-values_separator-option-like-">Use your own separator symbol with values_separator option. Like →</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-18"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">Weight: 100 million pounds</span><span class="irs-max" style="visibility: visible;">Weight: 200 million pounds</span><span class="irs-from" style="visibility: hidden; left: 36.7323%;">Weight: 148 million pounds</span><span class="irs-to" style="visibility: hidden; left: 40.7106%;">Weight: 152 million pounds</span><span class="irs-single" style="visibility: visible; left: 27.0337%;">Weight: 148 million pounds → Weight: 152 million pounds</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 48.0354%; width: 3.92919%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 47.1503%;"></span><span class="irs-slider to type_last" style="left: 51.0795%;"></span></span><input type="text" id="range_19" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_19"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_19'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">148</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">152</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'Weight: '</span><span class="p">,</span>
+        <span class="na">postfix</span><span class="p">:</span> <span class="s1">' million pounds'</span><span class="p">,</span>
+        <span class="na">values_separator</span><span class="p">:</span> <span class="s1">' → '</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="or--to-">Or “ to “:</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-19"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="visibility: visible;">Range: 100 light years</span><span class="irs-max" style="visibility: visible;">Range: 200 light years</span><span class="irs-from" style="visibility: hidden; left: 38.6007%;">Range: 148 light years</span><span class="irs-to" style="visibility: hidden; left: 42.5777%;">Range: 152 light years</span><span class="irs-single" style="visibility: visible; left: 37.8998%;">Range: 148 to 152 light years</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 48.0354%; width: 3.92919%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 47.1503%;"></span><span class="irs-slider to type_last" style="left: 51.0795%;"></span></span><input type="text" id="range_20" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_20"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_20'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">148</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">152</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s1">'Range: '</span><span class="p">,</span>
+        <span class="na">postfix</span><span class="p">:</span> <span class="s1">' light years'</span><span class="p">,</span>
+        <span class="na">decorate_both</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">values_separator</span><span class="p">:</span> <span class="s1">' to '</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="you-can-disable-all-the-sliders-visual-details-if-you-wish-like-this">You can disable all the sliders visual details, if you wish. Like this:</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-20"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 20.5311%; width: 58.9378%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 19.6459%;"></span><span class="irs-slider to type_last" style="left: 78.5838%;"></span></span><input type="text" id="range_21" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_21"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_21'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+        <span class="na">hide_min_max</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">hide_from_to</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="or-hide-any-part-you-wish">Or hide any part you wish</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-21"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 20.5311%; width: 58.9378%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 19.6459%;"></span><span class="irs-slider to type_last" style="left: 78.5838%;"></span></span><input type="text" id="range_22" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_22"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_22'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+        <span class="na">hide_min_max</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">hide_from_to</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="and-some-more">And some more</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-22"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min">1 000</span><span class="irs-max">2 000</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 20.5311%; width: 58.9378%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 19.6459%;"></span><span class="irs-slider to type_last" style="left: 78.5838%;"></span></span><input type="text" id="range_23" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_23"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_23'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+        <span class="na">hide_min_max</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">hide_from_to</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h3 class="float-left" id="and-some-more-1">And some more</h3>
+    <p><a href="https://coreui.io/pro/" class="btn btn-sm btn-outline-danger ml-3">CoreUI Pro Component</a></p>
+    <div class="docs-example">
+    <span class="irs js-irs-23"><span class="irs"><span class="irs-line" tabindex="0"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none; visibility: visible;">0</span><span class="irs-max" style="display: none; visibility: visible;">1</span><span class="irs-from" style="visibility: visible; left: 17.5764%;">1 200</span><span class="irs-to" style="visibility: visible; left: 76.4866%;">1 800</span><span class="irs-single" style="visibility: hidden; left: 43.5954%;">1 200 — 1 800</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 20.5311%; width: 58.9378%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 19.6459%;"></span><span class="irs-slider to type_last" style="left: 78.5838%;"></span></span><input type="text" id="range_24" name="example_name" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+    </div>
+    <div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"range_24"</span> <span class="na">name=</span><span class="s">"example_name"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span></code></pre></div>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#range_24'</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+        <span class="na">hide_min_max</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">hide_from_to</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+    </code></pre></div></div>
+    <h2 id="settings">Settings</h2>
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>Option</th>
+    <th>Data-Attr</th>
+    <th>Defaults</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code class="highlighter-rouge">type</code></td>
+    <td><code class="highlighter-rouge">data-type</code></td>
+    <td><code class="highlighter-rouge">single</code></td>
+    <td>string</td>
+    <td>Choose slider type, could be <code class="highlighter-rouge">single</code> - for one handle, or <code class="highlighter-rouge">double</code> for two handles</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">min</code></td>
+    <td><code class="highlighter-rouge">data-min</code></td>
+    <td><code class="highlighter-rouge">10</code></td>
+    <td>number</td>
+    <td>Set slider minimum value</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">max</code></td>
+    <td><code class="highlighter-rouge">data-max</code></td>
+    <td><code class="highlighter-rouge">100</code></td>
+    <td>number</td>
+    <td>Set slider maximum value</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">from</code></td>
+    <td><code class="highlighter-rouge">data-from</code></td>
+    <td><code class="highlighter-rouge">min</code></td>
+    <td>number</td>
+    <td>Set start position for left handle (or for single handle)</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">to</code></td>
+    <td><code class="highlighter-rouge">data-to</code></td>
+    <td><code class="highlighter-rouge">max</code></td>
+    <td>number</td>
+    <td>Set start position for right handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">step</code></td>
+    <td><code class="highlighter-rouge">data-step</code></td>
+    <td><code class="highlighter-rouge">1</code></td>
+    <td>number</td>
+    <td>Set sliders step. Always &gt; 0. Could be fractional</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">min_interval</code></td>
+    <td><code class="highlighter-rouge">data-min-interval</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td>number</td>
+    <td>Set minimum diapason between sliders. Only for <strong>double</strong> type</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">max_interval</code></td>
+    <td><code class="highlighter-rouge">data-max-interval</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td>number</td>
+    <td>Set minimum maximum between sliders. Only for <strong>double</strong> type</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">drag_interval</code></td>
+    <td><code class="highlighter-rouge">data-drag-interval</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Allow user to drag whole range. Only for <strong>double</strong> type</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">values</code></td>
+    <td><code class="highlighter-rouge">data-values</code></td>
+    <td><code class="highlighter-rouge">[]</code></td>
+    <td>array</td>
+    <td>Set up your own array of possible slider values. They could be numbers or strings. If the values array is set up, min, max and step param, can no longer be changed</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">from_fixed</code></td>
+    <td><code class="highlighter-rouge">data-from-fixed</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Fix position of left (or single) handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">from_min</code></td>
+    <td><code class="highlighter-rouge">data-from-min</code></td>
+    <td><code class="highlighter-rouge">min</code></td>
+    <td>number</td>
+    <td>Set minimum limit for left (or single) handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">from_max</code></td>
+    <td><code class="highlighter-rouge">data-from-max</code></td>
+    <td><code class="highlighter-rouge">max</code></td>
+    <td>number</td>
+    <td>Set maximum limit for left (or single) handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">from_shadow</code></td>
+    <td><code class="highlighter-rouge">data-from-shadow</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Highlight the limits for left handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">to_fixed</code></td>
+    <td><code class="highlighter-rouge">data-to-fixed</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Fix position of right handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">to_min</code></td>
+    <td><code class="highlighter-rouge">data-to-min</code></td>
+    <td><code class="highlighter-rouge">min</code></td>
+    <td>number</td>
+    <td>Set minimum limit for right handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">to_max</code></td>
+    <td><code class="highlighter-rouge">data-to-max</code></td>
+    <td><code class="highlighter-rouge">max</code></td>
+    <td>number</td>
+    <td>Set maximum limit for right handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">to_shadow</code></td>
+    <td><code class="highlighter-rouge">data-to-shadow</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Highlight the right handle</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">prettify_enabled</code></td>
+    <td><code class="highlighter-rouge">data-prettify-enabled</code></td>
+    <td><code class="highlighter-rouge">true</code></td>
+    <td>boolean</td>
+    <td>Improve readability of long numbers: 10000000 → 10 000 000</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">prettify_separator</code></td>
+    <td><code class="highlighter-rouge">data-prettify-separator</code></td>
+    <td><code class="highlighter-rouge"> </code></td>
+    <td>string</td>
+    <td>Set up your own separator for long numbers: 10000000 → 10,000,000 etc.</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">prettify</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>function</td>
+    <td>Set up your own prettify function. Can be anything. For example, you can set up unix time as slider values and than transform them to cool looking dates</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">force_edges</code></td>
+    <td><code class="highlighter-rouge">data-force-edges</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Sliders handles and tooltips will be always inside it’s container</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">keyboard</code></td>
+    <td><code class="highlighter-rouge">data-keyboard</code></td>
+    <td><code class="highlighter-rouge">true</code></td>
+    <td>boolean</td>
+    <td>Activates keyboard controls. Move left: ←, ↓, A, S. Move right: →, ↑, W, D.</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">grid</code></td>
+    <td><code class="highlighter-rouge">data-grid</code></td>
+    <td><code class="highlighter-rouge">true</code></td>
+    <td>boolean</td>
+    <td>Enables grid of values above the slider</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">grid_margin</code></td>
+    <td><code class="highlighter-rouge">data-grid-margin</code></td>
+    <td><code class="highlighter-rouge">true</code></td>
+    <td>boolean</td>
+    <td>Set left and right grid gaps</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">grid_num</code></td>
+    <td><code class="highlighter-rouge">data-grid-num</code></td>
+    <td><code class="highlighter-rouge">4</code></td>
+    <td>number</td>
+    <td>Number of grid units</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">grid_snap</code></td>
+    <td><code class="highlighter-rouge">data-grid-snap</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Snap grid to sliders step (step param). If activated, grid_num will not be used. Max steps = 50</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">hide_min_max</code></td>
+    <td><code class="highlighter-rouge">data-hide-min-max</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Hides <strong>min</strong> and <strong>max</strong> labels</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">hide_from_to</code></td>
+    <td><code class="highlighter-rouge">data-hide-from-to</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Hides <strong>from</strong> and <strong>to</strong> labels</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">prefix</code></td>
+    <td><code class="highlighter-rouge">data-prefix</code></td>
+    <td>``</td>
+    <td>string</td>
+    <td>Set prefix for values. Will be set up right before the number: <strong>$</strong>100</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">postfix</code></td>
+    <td><code class="highlighter-rouge">data-postfix</code></td>
+    <td>``</td>
+    <td>string</td>
+    <td>Set postfix for values. Will be set up right after the number: 100<strong>k</strong></td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">max_postfix</code></td>
+    <td><code class="highlighter-rouge">data-max-postfix</code></td>
+    <td>``</td>
+    <td>string</td>
+    <td>Special postfix, used only for maximum value. Will be showed after handle will reach maximum right position. For example <strong>0 — 100+</strong></td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">decorate_both</code></td>
+    <td><code class="highlighter-rouge">data-decorate-both</code></td>
+    <td><code class="highlighter-rouge">true</code></td>
+    <td>boolean</td>
+    <td>Used for <strong>double</strong> type and only if prefix or postfix was set up. Determine how to decorate close values. For example: <strong>$10k — $100k</strong> or <strong>$10 — 100k</strong></td>
+    </tr>
+    <tr>
+     <td><code class="highlighter-rouge">values_separator</code></td>
+    <td><code class="highlighter-rouge">data-decorate-both</code></td>
+    <td><code class="highlighter-rouge"> - </code></td>
+    <td>string</td>
+    <td>Set your own separator for close values. Used for <strong>double</strong> type. Default: <strong>10 — 100</strong>. Or you may set: <strong>10 to 100, 10 + 100, 10 → 100</strong> etc.</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">input_values_separator</code></td>
+    <td><code class="highlighter-rouge">data-input-values-separator</code></td>
+    <td><code class="highlighter-rouge"> ; </code></td>
+    <td>string</td>
+    <td>Separator for <strong>double</strong> values in input value property. <code class="highlighter-rouge">&lt;input value="25;42"&gt;</code></td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">disable</code></td>
+    <td><code class="highlighter-rouge">data-disable</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Locks slider and makes it inactive. Input is disabled too. Invisible to forms</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">block</code></td>
+    <td><code class="highlighter-rouge">data-blokc</code></td>
+    <td><code class="highlighter-rouge">false</code></td>
+    <td>boolean</td>
+    <td>Locks slider and makes it inactive. Input is NOT disabled. Can be send with forms</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">extra_classes</code></td>
+    <td><code class="highlighter-rouge">data-extra-classes</code></td>
+    <td><code class="highlighter-rouge">—</code></td>
+    <td>string</td>
+    <td>Traverse extra CSS-classes to sliders container</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">scope</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>object</td>
+    <td>Scope for callbacks. Pass any object</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">onStart</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>function</td>
+    <td>Callback. Is called on slider start. Gets all slider data as a 1st attribute</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">onChange</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>function</td>
+    <td>Callback. IS called on each values change. Gets all slider data as a 1st attribute</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">onFinish</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>function</td>
+    <td>Callback. Is called when user releases handle. Gets all slider data as a 1st attribute</td>
+    </tr>
+    <tr>
+    <td><code class="highlighter-rouge">onUpdate</code></td>
+    <td><code class="highlighter-rouge">-</code></td>
+    <td><code class="highlighter-rouge">null</code></td>
+    <td>function</td>
+    <td>Callback. Is called when slider is modified by external methods <code class="highlighter-rouge">update</code> or <code class="highlighter-rouge">reset</code></td>
+    </tr>
+    </tbody>
+    </table>
+    <h2 id="description-of-data-passed-to-callbacks-onchange-and-etc">Description of data passed to callbacks (onChange and etc.)</h2>
+    <p>Result is object type and passed to callback as first argument:</p>
+    <div class="language-javascript highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nx">Obj</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"input"</span><span class="p">:</span> <span class="nx">object</span><span class="p">,</span>            <span class="c1">// jQuery-link to input</span>
+        <span class="s2">"slider"</span><span class="p">:</span> <span class="nx">object</span><span class="p">,</span>           <span class="c1">// jQuery-link to sliders container</span>
+        <span class="s2">"min"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>                <span class="c1">// MIN value</span>
+        <span class="s2">"max"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>              <span class="c1">// MAX values</span>
+        <span class="s2">"from"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>              <span class="c1">// FROM value</span>
+        <span class="s2">"from_percent"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>         <span class="c1">// FROM value in percents</span>
+        <span class="s2">"from_value"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>            <span class="c1">// FROM index in values array (if used)</span>
+        <span class="s2">"to"</span><span class="p">:</span> <span class="mi">90000</span><span class="p">,</span>                <span class="c1">// TO value</span>
+        <span class="s2">"to_percent"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>           <span class="c1">// TO value in percents</span>
+        <span class="s2">"to_value"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1">// TO index in values array (if used)</span>
+        <span class="s2">"min_pretty"</span><span class="p">:</span> <span class="s2">"1 000"</span><span class="p">,</span>      <span class="c1">// MIN prettified (if used)</span>
+        <span class="s2">"max_pretty"</span><span class="p">:</span> <span class="s2">"100 000"</span><span class="p">,</span>    <span class="c1">// MAX prettified (if used)</span>
+        <span class="s2">"from_pretty"</span><span class="p">:</span> <span class="s2">"10 000"</span><span class="p">,</span>    <span class="c1">// FROM prettified (if used)</span>
+        <span class="s2">"to_pretty"</span><span class="p">:</span> <span class="s2">"90 000"</span>       <span class="c1">// TO prettified (if used)</span>
+    <span class="p">}</span>
+    </code></pre></div></div>
+    <h2 id="creating-slider-all-params">Creating slider (all params)</h2>
+    <p>An example of a customised slider:</p>
+    <div class="language-javascript highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#example"</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">9000</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'double'</span><span class="p">,</span>
+        <span class="na">prefix</span><span class="p">:</span> <span class="s2">"$"</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">grid_num</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">});</span>
+    </code></pre></div></div>
+    <p>You can also initialise slider with <code class="highlighter-rouge">&lt;code&gt;data-*&lt;/code&gt;</code> attributes of input tag:</p>
+    <div class="language-html highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code>data-min="0"
+    data-max="10000"
+    data-from="1000"
+    data-to="9000"
+    data-type="double"
+    data-prefix="$"
+    data-grid="true"
+    data-grid-num="10"
+    </code></pre></div></div>
+    <h2 id="public-methods">Public methods</h2>
+    <p>To use public methods, at first you must save slider instance to variable:</p>
+    <div class="language-javascript highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="c1">// Launch plugin</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#range"</span><span class="p">).</span><span class="nx">ionRangeSlider</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
+        <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">max</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+        <span class="na">grid</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">});</span>
+    
+    <span class="c1">// Saving it's instance to var</span>
+    <span class="kd">var</span> <span class="nx">slider</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#range"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s2">"ionRangeSlider"</span><span class="p">);</span>
+    
+    <span class="c1">// Fire public method</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+    </code></pre></div></div>
+    <p>There are 3 public methods:</p>
+    <div class="language-javascript highlighter-rouge"><div class="docs-clipboard"><button class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button></div><div class="highlight"><pre class="highlight"><code><span class="c1">// UPDATE - updates slider to any new values</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
+        <span class="na">from</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="na">to</span><span class="p">:</span> <span class="mi">400</span>
+    <span class="p">});</span>
+    
+    <span class="c1">// RESET - reset slider to it's first values</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+    
+    <span class="c1">// DESTROY - destroys slider and restores original input field</span>
+    <span class="nx">slider</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    </code></pre></div></div>
+    </div>
+    </div>
+    </div>
+    <div class="d-none d-xl-block col-xl-3 toc">
+    <div class="card">
+    <div class="card-body">
+    <ul class="section-nav">
+    <li class="toc-entry toc-h2"><a href="#examples">Examples</a>
+    <ul>
+    <li class="toc-entry toc-h3"><a href="#start-without-params">Start without params</a></li>
+    <li class="toc-entry toc-h3"><a href="#set-min-value-max-value-and-start-point">Set min value, max value and start point</a></li>
+    <li class="toc-entry toc-h3"><a href="#set-type-to-double-and-specify-range-also-showing-grid-and-adding-prefix-">Set type to double and specify range, also showing grid and adding prefix “$”</a></li>
+    <li class="toc-entry toc-h3"><a href="#set-up-range-with-negative-values">Set up range with negative values</a></li>
+    <li class="toc-entry toc-h3"><a href="#using-step-250">Using step 250</a></li>
+    <li class="toc-entry toc-h3"><a href="#set-up-range-with-fractional-values-using-fractional-step">Set up range with fractional values, using fractional step</a></li>
+    <li class="toc-entry toc-h3"><a href="#set-up-you-own-numbers">Set up you own numbers</a></li>
+    <li class="toc-entry toc-h3"><a href="#using-any-strings-as-your-values">Using any strings as your values</a></li>
+    <li class="toc-entry toc-h3"><a href="#one-more-example-with-strings">One more example with strings</a></li>
+    <li class="toc-entry toc-h3"><a href="#no-prettify-big-numbers-are-ugly-and-unreadable">No prettify. Big numbers are ugly and unreadable</a></li>
+    <li class="toc-entry toc-h3"><a href="#prettify-enabled-much-better">Prettify enabled. Much better!</a></li>
+    <li class="toc-entry toc-h3"><a href="#dont-like-space-as-separator-use-anything-you-like">Don’t like space as separator? Use anything you like!</a></li>
+    <li class="toc-entry toc-h3"><a href="#you-dont-like-default-prettify-function-use-your-own">You don’t like default prettify function? Use your own!</a></li>
+    <li class="toc-entry toc-h3"><a href="#using-prefixes">Using prefixes</a></li>
+    <li class="toc-entry toc-h3"><a href="#using-postfixes">Using postfixes</a></li>
+    <li class="toc-entry toc-h3"><a href="#whant-to-show-that-max-number-is-not-the-biggest-one">Whant to show that max number is not the biggest one?</a></li>
+    <li class="toc-entry toc-h3"><a href="#taking-care-about-how-from-and-to-values-connect-use-decorate_both-option">Taking care about how from and to values connect? Use decorate_both option:</a></li>
+    <li class="toc-entry toc-h3"><a href="#remove-double-decoration">Remove double decoration</a></li>
+    <li class="toc-entry toc-h3"><a href="#use-your-own-separator-symbol-with-values_separator-option-like-">Use your own separator symbol with values_separator option. Like →</a></li>
+    <li class="toc-entry toc-h3"><a href="#or--to-">Or “ to “:</a></li>
+    <li class="toc-entry toc-h3"><a href="#you-can-disable-all-the-sliders-visual-details-if-you-wish-like-this">You can disable all the sliders visual details, if you wish. Like this:</a></li>
+    <li class="toc-entry toc-h3"><a href="#or-hide-any-part-you-wish">Or hide any part you wish</a></li>
+    <li class="toc-entry toc-h3"><a href="#and-some-more">And some more</a></li>
+    <li class="toc-entry toc-h3"><a href="#and-some-more-1">And some more</a></li>
+    </ul>
+    </li>
+    <li class="toc-entry toc-h2"><a href="#settings">Settings</a></li>
+    <li class="toc-entry toc-h2"><a href="#description-of-data-passed-to-callbacks-onchange-and-etc">Description of data passed to callbacks (onChange and etc.)</a></li>
+    <li class="toc-entry toc-h2"><a href="#creating-slider-all-params">Creating slider (all params)</a></li>
+    <li class="toc-entry toc-h2"><a href="#public-methods">Public methods</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="src/jquery-3.3.1.min.js"></script>
+    <script src="src/popper.min.js"></script><script src="src/bootstrap.js"></script>
+    <script src="src/perfect-scrollbar.min.js"></script>
+    <script src="src/coreui.min.js"></script>
+    <script src="src/docs.min.js"></script>
+    <script src="src/ion.rangeSlider.min.js"></script>
+    <script src="src/sliders.js"></script>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://coreui.io/docs/assets/js/vendor/popper.min.js"></script><script src="https://coreui.io/docs/dist/js/bootstrap.js"></script>
+    <script src="https://coreui.io/docs/assets/js/perfect-scrollbar.min.js"></script>
+    <script src="https://coreui.io/docs/assets/js/coreui.min.js"></script>
+    <script src="https://coreui.io/docs/assets/js/docs.min.js"></script>
+    <script src="https://coreui.io/docs/assets/js/ion.rangeSlider.min.js"></script>
+    <script src="https://coreui.io/docs/assets/js/sliders.js"></script>
+    -->
+  </body>
+</html>

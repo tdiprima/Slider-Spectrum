@@ -1,0 +1,63 @@
+<title>Double Slider</title>
+<!-- https://codepen.io/Val_Ery/pen/MyEvNr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href='https://cdn.jsdelivr.net/foundation/6.2/foundation.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.css' rel='stylesheet'>
+
+<style>
+  .ex {
+    padding: 2rem;
+    border: 1px solid grey;
+  }
+
+  .separator {
+    border: 1px solid grey;
+    margin: 1rem 0;
+  }
+
+  p {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: gray;
+    text-decoration: underline;
+    padding: 1rem 0;
+  }
+</style>
+
+<a href="https://codepen.io/Val_Ery/pen/MyEvNr">https://codepen.io/Val_Ery/pen/MyEvNr</a><br>
+<font color="red">Simple, and you can enter a number.</font><br>
+
+<div class="row">
+  <p>double-sided</p>
+
+  <!-- left-side text box -->
+  <div class="small-12 medium-2 columns">
+    <input id="sliderOutput1" type="number">
+  </div>
+
+  <div class="small-12 medium-8 columns">
+    <div class="slider" data-end="100000" data-initial-end="75000" data-initial-start="3000" data-slider=""
+         data-start="0" data-step="100">
+      <span aria-controls="sliderOutput1" class="slider-handle" data-slider-handle="" role="slider" tabindex="1"></span>
+      <span class="slider-fill" data-slider-fill=""></span>
+      <span aria-controls="sliderOutput2" class="slider-handle" data-slider-handle="" role="slider" tabindex="1"></span>
+    </div>
+  </div>
+
+  <!-- right-side text box -->
+  <div class="small-12 medium-2 columns">
+    <input id="sliderOutput2" type="number">
+  </div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/foundation/6.2/foundation.min.js'></script>
+<script>
+  $(document).foundation()
+</script>
