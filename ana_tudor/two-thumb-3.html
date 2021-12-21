@@ -139,12 +139,7 @@
   <output for="b" style="--c: var(--b)"></output>
 </div>
 
-<script>
-  addEventListener('input', e => {
-    let _t = e.target;
-    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
-  }, false);
-</script>
+<script src="update-custom-props.js"></script>
 
 </body>
 </html>
