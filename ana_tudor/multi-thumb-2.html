@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>multi handle slider - basic flexible setup</title>
+  <!-- <title>multi handle slider - basic flexible setup</title> -->
+  <title>multi handle slider - realistic #2: 3D track &amp; fill</title>
   <style>
     /* fix too small font-size in both Chrome & Firefox */
     * {
@@ -32,6 +33,7 @@
       grid-column: 1/span 2;
       grid-row: 2;
       border-radius: var(--r);
+      box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3); /* 3-D effect */
       background: #ccc;
       content: "";
     }
@@ -45,7 +47,9 @@
       mask: var(--fill);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
-      background: #95a;
+      /* background: #95a; */
+      /* 3-D effect: */
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) #95a;
     }
 
     .sr-only {
