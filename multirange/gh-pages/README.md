@@ -1,5 +1,5 @@
 # multirange
-
+## FireFox - doesn't work.
 [github leaverou multirange](https://github.com/leaverou/multirange)
 
 A tiny polyfill for HTML5 multi-handle sliders
