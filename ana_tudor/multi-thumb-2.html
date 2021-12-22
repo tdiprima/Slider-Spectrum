@@ -6,129 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <title>multi handle slider - basic flexible setup</title> -->
   <title>multi handle slider - realistic #2: 3D track &amp; fill</title>
-  <style>
-    /* fix too small font-size in both Chrome & Firefox */
-    * {
-      font: inherit;
-    }
-
-    .wrap {
-      --w: 20em;
-      --h: 2em;
-      --d: var(--h);
-      --r: calc(.5 * var(--d));
-      --uw: calc(var(--w) - var(--d));
-      --dif: calc(var(--max) - var(--min));
-      display: grid;
-      grid-template: -webkit-max-content var(--h)/var(--w);
-      grid-template: max-content var(--h)/var(--w);
-      overflow: hidden;
-      position: relative;
-      margin: 1em auto;
-      width: var(--w);
-      font-family: ubuntu mono, consolas, monaco, monospace;
-    }
-
-    .wrap::before, .wrap::after {
-      grid-column: 1/span 2;
-      grid-row: 2;
-      border-radius: var(--r);
-      box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3); /* 3-D effect */
-      background: #ccc;
-      content: "";
-    }
-
-    .wrap::after {
-      /* non-standard WebKit version */
-      -webkit-mask: var(--fill);
-      -webkit-mask-composite: xor;
-      /* standard version, supported in Firefox */
-      -webkit-mask: var(--fill);
-      mask: var(--fill);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      /* background: #95a; */
-      /* 3-D effect: */
-      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) #95a;
-    }
-
-    .sr-only {
-      position: absolute;
-      -webkit-clip-path: inset(50%);
-      clip-path: inset(50%);
-    }
-
-    input[type=range] {
-      grid-column: 1;
-      grid-row: 2;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      margin: 0;
-      background: none;
-      /* get rid of white Chrome background */
-      color: #000;
-      pointer-events: none;
-    }
-
-    input[type=range]::-webkit-slider-runnable-track, input[type=range]::-webkit-slider-thumb, input[type=range] {
-      -webkit-appearance: none;
-    }
-
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 100%;
-      background: none;
-    }
-
-    input[type=range]::-moz-range-track {
-      width: 100%;
-      height: 100%;
-      background: none;
-    }
-
-    input[type=range]::-webkit-slider-thumb {
-      border: none;
-      /* get rid of Firefox thumb border */
-      width: var(--d);
-      height: var(--d);
-      border-radius: 50%;
-      /* make circular */
-      background: currentcolor;
-      pointer-events: auto;
-    }
-
-    input[type=range]::-moz-range-thumb {
-      border: none;
-      /* get rid of Firefox thumb border */
-      width: var(--d);
-      height: var(--d);
-      border-radius: 50%;
-      /* make circular */
-      background: currentcolor;
-      pointer-events: auto;
-    }
-
-    input[type=range]:focus {
-      z-index: 2;
-      outline: solid 0 transparent;
-    }
-
-    input[type=range]:focus, input[type=range]:focus + output {
-      color: darkorange;
-    }
-
-    output {
-      position: absolute;
-      right: 0;
-      color: transparent;
-    }
-
-    output::after {
-      counter-reset: c var(--c);
-      content: counter(c);
-    }
-  </style>
+  <link rel="stylesheet" href="css/multi-thumb-2.css">
 </head>
 <body>
 
@@ -150,7 +28,7 @@
   <output for="v3" style="--c: var(--v3)"></output>
 </div>
 
-<script src="update-custom-props.js"></script>
+<script src="js/update-custom-props.js"></script>
 
 </body>
 </html>
