@@ -36,8 +36,6 @@
   width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
 }
 
-/* DONE */
-
 [id=multi-lbl] {
   grid-column: 1/span 2;
 }
