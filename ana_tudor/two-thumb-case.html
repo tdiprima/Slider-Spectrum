@@ -18,17 +18,20 @@
 
 <!-- custom properties are set on the wrapper -->
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+
   <div id="multi-lbl">Multi thumb slider:</div>
+
   <label class="sr-only" for="a">Value A:</label>
   <input id="a" max="50" min="-50" type="range" value="-30"/>
   <output for="a" style="--c: var(--a)"></output>
+
   <label class="sr-only" for="b">Value B:</label>
   <input id="b" max="50" min="-50" type="range" value="20"/>
   <output for="b" style="--c: var(--b)"></output>
+
 </div>
 
 <script src="js/update-custom-props.js"></script>
 
 </body>
 </html>
-
