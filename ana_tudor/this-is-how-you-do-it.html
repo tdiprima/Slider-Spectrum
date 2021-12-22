@@ -115,11 +115,11 @@
     text-align: right;
   }
 
-/* display the values using a little counter trick */
-output::after {
-  counter-reset: c var(--c);
-  content: "--" attr(for) ": " counter(c) ";";
-}
+  /* display the values using a little counter trick */
+  output::after {
+    counter-reset: c var(--c);
+    content: "--" attr(for) ": " counter(c) ";";
+  }
 </style>
 
 <script src="e.js"></script>
