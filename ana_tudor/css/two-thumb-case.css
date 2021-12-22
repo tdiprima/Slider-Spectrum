@@ -1,4 +1,4 @@
-/* fix too small font-size in both Chrome & Firefox */
+/* Make text easier to read (Chrome & Firefox issue) */
 * {
   font: inherit;
 }
@@ -43,7 +43,7 @@ input[type=range] {
   /* get rid of white Chrome background */
   color: #000;
   font: inherit;
-  /* fix too small font-size in both Chrome & Firefox */
+  /*  */
   pointer-events: none;
 }
 
