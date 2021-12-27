@@ -1,9 +1,9 @@
 <body>
 <style>
-    /* fix too small font-size in both Chrome & Firefox */
-    * {
-      font: inherit;
-    }
+  /* fix too small font-size in both Chrome & Firefox */
+  * {
+    font: inherit;
+  }
 
   /* make the wrapper a middle-aligned grid with two rows and one column */
   .wrap {
@@ -28,13 +28,13 @@
   }
 
   .wrap::before {
-    margin-left: calc((var(--a) - var(--min))/var(--dif)*100%);
-    width: calc((var(--b) - var(--a))/var(--dif)*100%);
+    margin-left: calc((var(--a) - var(--min)) / var(--dif) * 100%);
+    width: calc((var(--b) - var(--a)) / var(--dif) * 100%);
   }
 
   .wrap::after {
-    margin-left: calc((var(--b) - var(--min))/var(--dif)*100%);
-    width: calc((var(--a) - var(--b))/var(--dif)*100%);
+    margin-left: calc((var(--b) - var(--min)) / var(--dif) * 100%);
+    width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
   }
 
   [id=multi-lbl] {
@@ -45,7 +45,7 @@
   .sr-only {
     position: absolute;
     -webkit-clip-path: inset(50%);
-            clip-path: inset(50%);
+    clip-path: inset(50%);
   }
 
   /* place the sliders, one on top of the other, in the bottom grid cell */
@@ -123,15 +123,22 @@
 </style>
 
 <script src="e.js"></script>
+<script src="../js/getSliderValues.js"></script>
 <script src="js/update-custom-props.js"></script>
 <script>
+  let min = 0
+  let max = 255
+  let initA = 70
+  let initB = 128
+
   // Creating a 3x2 table
   let wrapper = e('div', {
     'class': 'wrap',
     'role': 'group',
     'aria-labelledby': 'multi-lbl',
-    'style': '--a: -30; --b: 20; --min: -50; --max: 50'
+    'style': `--a: ${initA}; --b: ${initB}; --min: ${min}; --max: ${max}`
   })
+
   let title = e('div', {'id': 'multi-lbl'})
   title.innerHTML = 'Multi thumb slider:'
   wrapper.appendChild(title)
@@ -141,25 +148,30 @@
   let BLabel = e('label', {'class': 'sr-only', 'for': 'b'})
   BLabel.innerHTML = 'Value B:'
 
-  let ARange = e('input', {'id': 'a', 'type': 'range', 'min': -50, 'max': 50, 'value': -30})
-  let BRange = e('input', {'id': 'b', 'type': 'range', 'min': -50, 'max': 50, 'value': 20})
+  let ARange = e('input', {'id': 'a', 'type': 'range', 'min': min, 'max': max, 'value': initA})
+  let BRange = e('input', {'id': 'b', 'type': 'range', 'min': min, 'max': max, 'value': initB})
 
   // To display the current values:
-  let outputA = e('output', {'for':'a', 'style':'--c: var(--a)'})
-  let outputB = e('output', {'for':'b', 'style':'--c: var(--b)'})
+  // let outputA = e('output', {'for':'a', 'style':'--c: var(--a)'})
+  // let outputB = e('output', {'for':'b', 'style':'--c: var(--b)'})
+  let outputMe = e('span')
+  outputMe.innerHTML = `${ARange.value} - ${BRange.value}`
 
   wrapper.appendChild(ALabel)
   wrapper.appendChild(ARange)
-  wrapper.appendChild(outputA)
+  // wrapper.appendChild(outputA)
+  wrapper.appendChild(outputMe)
   wrapper.appendChild(BLabel)
   wrapper.appendChild(BRange)
-  wrapper.appendChild(outputB)
+  // wrapper.appendChild(outputB)
 
   document.body.appendChild(wrapper)
 
   // update the custom properties we've set on the wrapper
   addEventListener('input', e => {
     let _t = e.target;
+    let d = getSliderValues([ARange, BRange], outputMe)
+    // outputMe.innerHTML = `${d[0]} - ${d[1]}`
     _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
   }, false);
 </script>
