@@ -101,12 +101,12 @@ output::after {
 </head>
 <body>
 <h1>prettify output</h1>
-<div class="wrap" role="group" aria-labelledby="multi-lbl" style=
-"--a: -30; --b: 20; --min: -50; --max: 50">
-<div id="multi-lbl">Multi thumb slider:</div>
-<label class="sr-only" for="a">Value A:</label> <input id="a" type=
-"range" min="-50" value="-30" max="50"> <label class="sr-only" for=
-"b">Value B:</label> <input id="b" type="range" min="-50" value=
-"20" max="50"></div>
+<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+  <div id="multi-lbl">Multi thumb slider:</div>
+  <label class="sr-only" for="a">Value A:</label>
+  <input id="a" max="50" min="-50" type="range" value="-30">
+  <label class="sr-only" for="b">Value B:</label>
+  <input id="b" max="50" min="-50" type="range" value="20">
+</div>
 </body>
 </html>
