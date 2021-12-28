@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>CSS Demo: appearance</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/appearance -->
+  <!-- https://interactive-examples.mdn.mozilla.net/pages/css/appearance.html -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <!-- https://interactive-examples.mdn.mozilla.net/css/css-examples-libs.css?v=a857922 -->
+  <link href="css-examples-libs.css" rel="stylesheet"/>
+  <!-- https://interactive-examples.mdn.mozilla.net/js/editor-css.js?v=a857922 -->
+  <link href="editor-css.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- editor-css url(): -->
+  <!-- https://interactive-examples.mdn.mozilla.net/media/dino.svg, warning.svg, clippy.svg -->
+</head>
+<body>
+<h1>It only works in Safari <i class="fa fa-safari" aria-hidden="true"></i></h1>
+
+<section class="css-editor-container">
+  <header class="output-header hidden">
+    <h4>CSS Demo: appearance</h4>
+    <button class="reset" id="reset" type="button">Reset</button>
+  </header>
+  <div class="editor-wrapper">
+    <section class="example-choice-list" id="example-choice-list">
+      <div class="example-choice">
+    <pre><code class="language-css">
+    -webkit-appearance: none;
+   -moz-appearance: none;
+        appearance: none;</code></pre>
+        <button aria-hidden="true" class="copy hidden" type="button">
+          <span class="visually-hidden">Copy to Clipboard</span>
+        </button>
+      </div>
+
+      <div class="example-choice">
+    <pre><code class="language-css">
+    -webkit-appearance: auto;
+   -moz-appearance: auto;
+        appearance: auto;</code></pre>
+        <button aria-hidden="true" class="copy hidden" type="button">
+          <span class="visually-hidden">Copy to Clipboard</span>
+        </button>
+      </div>
+
+      <div class="example-choice">
+    <pre><code class="language-css">
+    -webkit-appearance: menulist-button;
+   -moz-appearance: menulist-button;
+        appearance: menulist-button;</code></pre>
+        <button aria-hidden="true" class="copy hidden" type="button">
+          <span class="visually-hidden">Copy to Clipboard</span>
+        </button>
+      </div>
+
+      <div class="example-choice">
+    <pre><code class="language-css">
+    -webkit-appearance: button;
+   -moz-appearance: button;
+        appearance: button;</code></pre>
+        <button aria-hidden="true" class="copy hidden" type="button">
+          <span class="visually-hidden">Copy to Clipboard</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="output hidden large" id="output">
+      <section id="default-example">
+        <div id="example-element">element</div>
+      </section>
+    </div>
+
+  </div>
+</section>
+
+<div aria-hidden="true" class="user-message" id="user-message">Copied!</div>
+
+<!-- https://interactive-examples.mdn.mozilla.net/js/css-examples-libs.js?v=a857922 -->
+<script src="css-examples-libs.js"></script>
+<!-- https://interactive-examples.mdn.mozilla.net/js/editor-css.js?v=a857922 -->
+<script src="editor-css.js"></script>
+
+</body>
+</html>
