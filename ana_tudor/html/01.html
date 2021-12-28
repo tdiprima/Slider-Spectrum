@@ -4,35 +4,34 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>CodePen - 2 handle slider</title>
+  <title>CodePen - 2 handle slider</title>
 
-<style>
-/*makes the sliders overlap*/
-.wrap {
-  display: grid;
-  grid-template-rows: -webkit-max-content 1em;
-  grid-template-rows: max-content 1em;
-  overflow: hidden;
-  position: relative;
-  margin: 1em auto;
-  width: 20em;
-}
+  <style>
+    .wrap {
+      display: grid; /* makes the sliders overlap */
+      grid-template-rows: -webkit-max-content 1em;
+      grid-template-rows: max-content 1em;
+      overflow: hidden;
+      position: relative; /* RELATIVE */
+      margin: 1em auto; /* centers it on the page */
+      width: 20em;
+    }
 
-/* Hides: */
-/*Value A:*/
-/*Value B:*/
-.sr-only {
-  position: absolute;
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-}
+    /* Hides: */
+    /* Value A: */
+    /* Value B: */
+    .sr-only {
+      position: absolute; /* ABSOLUTE */
+      -webkit-clip-path: inset(50%);
+              clip-path: inset(50%);
+    }
 
-/*2 rows, 1 column*/
-input[type=range] {
-  grid-column: 1;
-  grid-row: 2;
-}
-</style>
+    /* 1 column, 2 rows */
+    input[type=range] {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  </style>
 
 </head>
 <body>

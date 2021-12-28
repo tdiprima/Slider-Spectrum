@@ -4,90 +4,85 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>CodePen - 2 handle slider</title>
+  <title>CodePen - 2 handle slider</title>
 
-<!--
-basic look
-functionality
-display output
--->
+  <style>
+    .wrap {
+      display: grid; /* makes the sliders overlap */
+      grid-template-rows: -webkit-max-content 1em;
+      grid-template-rows: max-content 1em;
+      overflow: hidden;
+      position: relative; /* RELATIVE */
+      margin: 1em auto; /* centers it on the page */
+      width: 20em;
+      background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
+    }
 
-<style>
-/*makes the sliders overlap*/
-.wrap {
-  display: grid;
-  grid-template-rows: -webkit-max-content 1em;
-  grid-template-rows: max-content 1em;
-  overflow: hidden;
-  position: relative;
-  margin: 1em auto;
-  width: 20em;
-  background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
-}
+    /* Hides: */
+    /* Value A: */
+    /* Value B: */
+    .sr-only {
+      position: absolute; /* ABSOLUTE */
+      -webkit-clip-path: inset(50%);
+              clip-path: inset(50%);
+    }
 
-/* Hides: */
-/*Value A:*/
-/*Value B:*/
-.sr-only {
-  position: absolute;
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-}
+    /* 1 column, 2 rows */
+    input[type=range] {
+      grid-column: 1;
+      grid-row: 2;
+      /* TOP, LEFT */
+      top: 0;
+      left: 0;
+      margin: 0;
+      background: none; /* get rid of white Chrome background */
+      color: #000;
+      font: inherit; /* Fixes the square thumbs */
+      pointer-events: none;
+    }
 
-/*2 rows, 1 column*/
-input[type=range] {
-  grid-column: 1;
-  grid-row: 2;
-  top: 0;
-  left: 0;
-  margin: 0;
-  background: none; /* get rid of white Chrome background */
-  color: #000;
-  font: inherit; /* fix too small font-size in both Chrome & Firefox */
-  pointer-events: none;
-}
+    input[type=range]::-webkit-slider-runnable-track,
+    input[type=range]::-webkit-slider-thumb,
+    input[type=range] {
+      -webkit-appearance: none;
+    }
 
-input[type=range]::-webkit-slider-runnable-track, input[type=range]::-webkit-slider-thumb, input[type=range] {
-  -webkit-appearance: none;
-}
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 100%;
+      background: none; /* get rid of white Chrome background */
+    }
 
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 100%;
-  background: none; /* get rid of white Chrome background */
-}
+    input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 100%;
+      background: none; /* get rid of Firefox track background */
+    }
 
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 100%;
-  background: none; /* get rid of Firefox track background */
-}
+    input[type=range]::-webkit-slider-thumb {
+      border: none; /* get rid of thumb border */
+      width: 1em;
+      height: 1em;
+      border-radius: 0; /* get rid of corner rounding */
+      background: currentcolor;
+      pointer-events: auto;
+    }
 
-input[type=range]::-webkit-slider-thumb {
-  border: none;
-  /* get rid of Firefox thumb border */
-  width: 1em;
-  height: 1em;
-  border-radius: 0;
-  /* get rid of Firefox corner rounding */
-  background: currentcolor;
-  pointer-events: auto;
-}
+    input[type=range]::-moz-range-thumb {
+      border: none; /* get rid of Firefox thumb border */
+      width: 1em;
+      height: 1em;
+      border-radius: 0; /* get rid of Firefox corner rounding (they're circles!) */
+      background: currentcolor; /* black */
+      pointer-events: auto; /* catch clicks */
+    }
 
-input[type=range]::-moz-range-thumb {
-  border: none; /* get rid of Firefox thumb border */
-  width: 1em;
-  height: 1em;
-  border-radius: 0; /* get rid of Firefox corner rounding */
-  background: currentcolor;
-  pointer-events: auto; /* catch clicks */
-}
-
-output::after {
-  counter-reset: c var(--c);
-  content: counter(c);
-}
-</style>
+    /* OUTPUT */
+    output::after {
+      counter-reset: c var(--c);
+      content: counter(c);
+    }
+  </style>
 
 </head>
 <body>

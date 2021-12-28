@@ -4,118 +4,119 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>CodePen - 2 handle slider</title>
+  <title>CodePen - 2 handle slider</title>
 
-<style>
-/* Moved font inherit from 'input[type=range]' to 'all' */
-* {
-  font: inherit;
-}
+  <style>
+    /* MOVED font inherit from 'input[type=range]' to 'all' */
+    * {
+      font: inherit;
+    }
 
-/*makes the sliders overlap*/
-.wrap {
-  display: grid;
-  /* Instead of 'grid-template-rows'; 'grid-template: repeat' */
-  grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
-  grid-template: repeat(2, max-content) 1em/1fr 1fr;
-  overflow: hidden;
-  position: relative;
-  margin: 1em auto;
-  width: 20em;
-  background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
-  font-family: ubuntu mono, consolas, monaco, monospace;
-}
+    .wrap {
+      display: grid; /* makes the sliders overlap */
+      /* Instead of 'grid-template-rows'; 'grid-template: repeat' */
+      grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
+      grid-template: repeat(2, max-content) 1em/1fr 1fr;
+      overflow: hidden;
+      position: relative; /* RELATIVE */
+      margin: 1em auto; /* centers it on the page */
+      width: 20em;
+      background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
+      font-family: ubuntu mono, consolas, monaco, monospace; /* ADDED FONT FAMILY */
+    }
 
-/* wrapper */
-[id=multi-lbl] {
-  grid-column: 1/span 2;
-}
+    /* wrapper */
+    [id=multi-lbl] {
+      grid-column: 1/span 2;
+    }
 
-/* Hides: */
-/*Value A:*/
-/*Value B:*/
-.sr-only {
-  position: absolute;
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-}
+    /* Hides: */
+    /* Value A: */
+    /* Value B: */
+    .sr-only {
+      position: absolute; /* ABSOLUTE */
+      -webkit-clip-path: inset(50%);
+              clip-path: inset(50%);
+    }
 
-/*placement: track, thumb, background*/
-input[type=range] {
-  grid-column: 1/span 2;
-  grid-row: 3;
-  z-index: 1; /* added z-index */
-  top: 0;
-  left: 0;
-  margin: 0;
-  background: none; /* get rid of white Chrome background */
-  color: #000;
-  pointer-events: none;
-}
+    /* placement: track, thumb, background */
+    /* 1 column, 3 rows */
+    input[type=range] {
+      grid-column: 1/span 2;
+      grid-row: 3;
+      z-index: 1; /* added z-index */
+      top: 0;
+      left: 0;
+      margin: 0;
+      background: none; /* get rid of white Chrome background */
+      color: #000;
+      pointer-events: none;
+    }
 
-input[type=range]::-webkit-slider-runnable-track, input[type=range]::-webkit-slider-thumb, input[type=range] {
-  -webkit-appearance: none;
-}
+    input[type=range]::-webkit-slider-runnable-track,
+    input[type=range]::-webkit-slider-thumb,
+    input[type=range] {
+      -webkit-appearance: none;
+    }
 
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 100%;
-  background: none; /* get rid of white Chrome background */
-}
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 100%;
+      background: none; /* get rid of white Chrome background */
+    }
 
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 100%;
-  background: none; /* get rid of Firefox track background */
-}
+    input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 100%;
+      background: none; /* get rid of Firefox track background */
+    }
 
-input[type=range]::-webkit-slider-thumb {
-  border: none;
-  /* get rid of Firefox thumb border */
-  width: 1em;
-  height: 1em;
-  border-radius: 0;
-  /* get rid of Firefox corner rounding */
-  background: currentcolor;
-  pointer-events: auto;
-}
+    input[type=range]::-webkit-slider-thumb {
+      border: none; /* get rid of thumb border */
+      width: 1em;
+      height: 1em;
+      border-radius: 0; /* get rid of corner rounding */
+      background: currentcolor;
+      pointer-events: auto;
+    }
 
-input[type=range]::-moz-range-thumb {
-  border: none; /* get rid of Firefox thumb border */
-  width: 1em;
-  height: 1em;
-  border-radius: 0; /* get rid of Firefox corner rounding */
-  background: currentcolor;
-  pointer-events: auto; /* catch clicks */
-}
+    input[type=range]::-moz-range-thumb {
+      border: none; /* get rid of Firefox thumb border */
+      width: 1em;
+      height: 1em;
+      border-radius: 0; /* get rid of Firefox corner rounding (they're circles!) */
+      background: currentcolor; /* black */
+      pointer-events: auto; /* catch clicks */
+    }
 
-/* THE ORANGE PART */
-input[type=range]:focus {
-  z-index: 2;
-}
+    /* THE ORANGE PART */
+    input[type=range]:focus {
+      z-index: 2;
+    }
 
-input[type=range]:focus, input[type=range]:focus + output {
-  color: darkorange;
-}
+    input[type=range]:focus, input[type=range]:focus + output {
+      color: darkorange;
+    }
 
-/* OUTPUT */
-output {
-  grid-row: 2;
-}
+    /* output */
+    output {
+      grid-row: 2;
+    }
 
-output:last-child {
-  text-align: right;
-}
+    /* output:last-child */
+    output:last-child {
+      text-align: right;
+    }
 
-output::after {
-  counter-reset: c var(--c);
-  content: "--" attr(for) ": " counter(c) ";";
-}
-</style>
+    output::after {
+      counter-reset: c var(--c);
+      content: "--" attr(for) ": " counter(c) ";";
+    }
+  </style>
 
 </head>
 <body>
-<h1>focus styles <-- no longer H1</h1>
+<h1>focus styles <-- Notice, we lost our H1 style.</h1>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
   <div id="multi-lbl">Multi thumb slider:</div>
   <label class="sr-only" for="a">Value A:</label>
