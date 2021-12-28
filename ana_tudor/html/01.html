@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CodePen - 2 handle slider</title>
+
+<style>
+/*makes the sliders overlap*/
+.wrap {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1em;
+  grid-template-rows: max-content 1em;
+  overflow: hidden;
+  position: relative;
+  margin: 1em auto;
+  width: 20em;
+}
+
+/* Hides: */
+/*Value A:*/
+/*Value B:*/
+.sr-only {
+  position: absolute;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+}
+
+/*2 rows, 1 column*/
+input[type=range] {
+  grid-column: 1;
+  grid-row: 2;
+}
+</style>
+
+</head>
+<body translate="no">
+<h1>Plain old slider</h1>
+<div class="wrap" role="group" aria-labelledby="multi-lbl" style=
+"--a: -30; --b: 20; --min: -50; --max: 50">
+<div id="multi-lbl">Multi thumb slider:</div>
+<label class="sr-only" for="a">Value A:</label> <input id="a" type=
+"range" min="-50" value="-30" max="50"> <label class="sr-only" for=
+"b">Value B:</label> <input id="b" type="range" min="-50" value=
+"20" max="50"></div>
+</body>
+</html>
