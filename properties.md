@@ -177,6 +177,48 @@ element {
 }
 ```
 
+<br>
+
+# [calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc())
+
+Lets you perform calculations when specifying property values.
+
+```
+width: calc(10px + 100px);
+```
+
+<br>
+
+# [counter()](https://developer.mozilla.org/en-US/docs/Web/CSS/counter())
+
+Returns a string representing the current value of the named counter.
+
+It must first be initialized to a value with the `counter-reset` property (0 by default).
+
+```
+output::after {
+  counter-reset: c var(--c);
+  content: counter(c);
+}
+```
+
+The value of a counter can be displayed using either the `counter()` or `counters()` function in a `content` property.
+
+### [Using counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters)
+
+<br>
+
+# [attr()](https://developer.mozilla.org/en-US/docs/Web/CSS/attr())
+
+Retrieves the value of an attribute of the selected element and uses it in the stylesheet.
+
+This inserts the value of the href attribute in parenthesis after each link:
+
+```
+a:after {
+  content: " (" attr(href) ")";
+}
+```
 
 <br>
 
