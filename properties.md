@@ -9,7 +9,6 @@
 Relative length units scale better between different rendering medium.
 
 
-<br>
 # em
 `2em` means **2 times the size of the current** font.
 
@@ -22,7 +21,6 @@ So each successive level of nesting gets progressively larger, as each has its f
 ### [Example](properties/relative-len.html)
 
 
-<br>
 # rem
 To recap, the `rem` unit means "The root element's font-size".
 
@@ -39,28 +37,31 @@ This means that each successive level of nesting does not keep getting larger.
 # grid-template-rows
 The `grid-template-rows` property defines the line names and [track sizing](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Tracks) functions of the [grid rows](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Rows).
 
-### CSS Demo: [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
+### [Demo: grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 
 
 <br>
 # grid-column
 The `grid-column` specifies a grid item's **size** and **location** within a grid column.
 
-### [CSS Demo: grid-column](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
+### [Demo: grid-column](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
 
 
 <br>
 # grid-row
 The `grid-row` property specifies a grid item's **size** and **location** within the grid row.
 
-### [CSS Demo: grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
+### [Demo: grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
 
 
 <br>
-# -webkit-max-content 1em;
+# max-content
+
 The `max-content` sizing keyword represents the maximum width or height of the content.
 
 For text content this means that the content will not wrap at all even if it causes overflows.
+
+Ex: `-webkit-max-content 1em;`
 
 ### [Examples](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content#examples)
 
@@ -69,14 +70,14 @@ For text content this means that the content will not wrap at all even if it cau
 # Overflow
 The overflow sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
 
-### [CSS Demo: overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+### [Demo: overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 
 
 <br>
 # Position
 The position property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.
 
-### [CSS Demo: position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+### [Demo: position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 
 <br>
@@ -95,7 +96,7 @@ The screen reader utility in Bootstrap.
 
 The clip-path property creates a clipping region that sets what part of an element should be shown.
 
-### [CSS Demo: clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
+### [Demo: clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
 
 
 <br>
@@ -107,13 +108,14 @@ The `-moz-appearance` and `-webkit-appearance` properties are non-standard versi
 Used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing.
 
 <mark>This is the one where I said none of the examples work.</mark> In any browser.
-**[CSS Demo: appearance](https://developer.mozilla.org/en-US/docs/Web/CSS/appearance)**
+**[Demo: appearance](https://developer.mozilla.org/en-US/docs/Web/CSS/appearance)**
 Well, except for Safari.
 The `menulist-button` looks like it wants to work, but is fxcked up.
 And `button` actually works.
 Firefox now is fxcked up, after posting the issue.
 
-SO &ndash; I made my own example.  See: **[appearance.html](appearance/appearance.html)**
+SO &ndash; I made my own example:
+### [appearance.html](appearance/appearance.html)
 
 
 <br>
@@ -143,6 +145,8 @@ Only the **at-rule as a whole** participates in the cascade:
 
 If several `@font-face` rules with the same descriptor are defined, only the most appropriate `@font-face`, as a whole, is considered.
 
+### [cascading order](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#cascading_order)
+
 
 <br>
 # Descriptor
@@ -160,6 +164,7 @@ Each descriptor has:
 ### [Descriptor](https://developer.mozilla.org/en-US/docs/Glossary/Descriptor_(CSS))
 
 
+<br>
 # @rule
 **[At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)** are statements that instruct CSS how to behave.
 
@@ -168,11 +173,8 @@ Each descriptor has:
 * includes everything up to the next semicolon, ';', 
 * or the next CSS block, whichever comes first.
 
-```
-/* General structure */
-@IDENTIFIER (RULE);
+**Tells browser to use UTF-8 character set:**
 
-/* Example: tells browser to use UTF-8 character set */
+```
 @charset "utf-8";
 ```
-
