@@ -39,13 +39,13 @@
     /* FILL SIZE via 2 pseudos */
     /* Put the calculations here: */
     .wrap::before {
-      margin-left: calc((var(--a) - var(--min))/var(--dif)*100%);
-      width: calc((var(--b) - var(--a))/var(--dif)*100%);
+      margin-left: calc((var(--a) - var(--min)) / var(--dif) * 100%);
+      width: calc((var(--b) - var(--a)) / var(--dif) * 100%);
     }
 
     .wrap::after {
-      margin-left: calc((var(--b) - var(--min))/var(--dif)*100%);
-      width: calc((var(--a) - var(--b))/var(--dif)*100%);
+      margin-left: calc((var(--b) - var(--min)) / var(--dif) * 100%);
+      width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
     }
 
     /* wrapper */
