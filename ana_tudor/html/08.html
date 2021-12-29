@@ -41,8 +41,9 @@
     }
 
     .wrap::after {
-      margin-left: calc((var(--b) - var(--min))/var(--dif)*100%);
-      width: calc((var(--a) - var(--b))/var(--dif)*100%);
+      /* As 'b' increases, the margin & width decrease */
+      margin-left: calc(var(--b)/var(--dif)*100%);
+      width: calc((var(--max) - var(--b))/var(--dif)*100%);
     }
 
     [id=multi-lbl] {
