@@ -22,7 +22,7 @@ So each successive level of nesting gets progressively larger, as each has its f
 
 
 # rem
-To recap, the `rem` unit means "The root element's font-size".
+To recap, the `rem` unit means "The **root element**'s font-size".
 
 `rem` stands for "**root em**".
 
@@ -98,6 +98,8 @@ The clip-path property creates a clipping region that sets what part of an eleme
 
 ### [Demo: clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
 
+![balloon](img/balloon-small.jpg)
+
 
 <br>
 # Appearance
@@ -127,6 +129,32 @@ They contain specific values to be reused throughout a document.
 **Set** via custom property notation: `--main-color: black;`
 
 **Get** by using the `var()` function: `color: var(--main-color);`
+
+**Declaring** a custom property is done using a **name** that begins with a double hyphen (--), and a **value**.
+
+This is written inside a **ruleset**, like so:
+
+```
+element {
+  --main-bg-color: brown;
+}
+```
+
+A common best practice is to **define** custom properties on the **[:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)** pseudo-class, so that it can be applied **globally** across your HTML document:
+
+```
+:root {
+  --main-bg-color: brown;
+}
+```
+
+You **use** the value by specifying your name inside the var() function, in place of a regular property value:
+
+```
+element {
+  background-color: var(--main-bg-color);
+}
+```
 
 
 <br>
@@ -173,8 +201,48 @@ Each descriptor has:
 * includes everything up to the next semicolon, ';', 
 * or the next CSS block, whichever comes first.
 
-**Tells browser to use UTF-8 character set:**
+**Tells browser** to **use UTF-8** character set:
 
 ```
 @charset "utf-8";
 ```
+
+
+<br>
+# Character Encoding
+
+<span style="color:green">**UTF-8**</span> stands for "<span style="color:green">**U**</span>nicode <span style="color:green">**T**</span>ransformation <span style="color:green">**F**</span>ormat - <span style="color:green">**8 bits**</span>."
+
+In order to **store information**, computers use a **binary system**, where all data is represented in sequences of 1s and 0s.
+
+The most basic unit of binary is a **bit**, which is just a single 1 or 0.
+
+The next largest unit of binary, a **byte**, consists of **8 bits**.
+
+**Text** is made up of individual characters, each of which is represented in computers by a **string of bits**.
+
+<br>
+When we refer to <span style="color:purple">**file sizes**</span>, we're referencing the **number of bytes**. 
+
+* **KB** kilobyte is roughly 1000 bytes
+* **GB** gigabyte is roughly one billion bytes (1,000,000,000)
+
+<br>
+<span style="color:red">**ASCII**</span> = <span style="color:red">**A**</span>merican <span style="color: red">**S**</span>tandard <span style="color: red">**C**</span>ode for <span style="color: red">**I**</span>nformation <span style="color: red">**I**</span>nterchange
+
+An early standardized encoding system for text.
+
+**Encoding** is the process of **converting characters** in human languages into binary sequences that computers can process.
+
+**ASCII's library** includes every upper-case and lower-case letter in the Latin alphabet (A, B, C...), every digit from 0 to 9, and some common symbols (like /, !, and ?).
+
+It assigns each of these characters a unique **three-digit code** and a unique **byte**.
+
+<br>
+<span style="color:blue">**Unicode:**</span> A Way to Store Every Symbol, Ever.
+
+Unicode is the universal standard for encoding **all human languages**. 
+
+It even includes **emojis**.
+
+### [ARTICLE](https://blog.hubspot.com/website/what-is-utf-8)
