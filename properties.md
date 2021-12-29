@@ -1,6 +1,5 @@
 # Properties
 
-<hr>
 
 # Relative Lengths
 
@@ -34,27 +33,34 @@ This means that each successive level of nesting does not keep getting larger.
 
 
 <br>
+
 # grid-template-rows
+
 The `grid-template-rows` property defines the line names and [track sizing](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Tracks) functions of the [grid rows](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Rows).
 
 ### [Demo: grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 
 
 <br>
+
 # grid-column
+
 The `grid-column` specifies a grid item's **size** and **location** within a grid column.
 
 ### [Demo: grid-column](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
 
 
 <br>
+
 # grid-row
+
 The `grid-row` property specifies a grid item's **size** and **location** within the grid row.
 
 ### [Demo: grid-row](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
 
 
 <br>
+
 # max-content
 
 The `max-content` sizing keyword represents the maximum width or height of the content.
@@ -67,21 +73,27 @@ Ex: `-webkit-max-content 1em;`
 
 
 <br>
+
 # Overflow
+
 The overflow sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
 
 ### [Demo: overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 
 
 <br>
+
 # Position
+
 The position property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.
 
 ### [Demo: position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 
 <br>
+
 # sr-only
+
 The screen reader utility in Bootstrap.
 
 `.sr-only`: This class hides an element in all devices except for the [screen readers](https://en.wikipedia.org/wiki/Screen_reader).
@@ -92,6 +104,7 @@ The screen reader utility in Bootstrap.
 
 
 <br>
+
 # clip-path
 
 The clip-path property creates a clipping region that sets what part of an element should be shown.
@@ -102,7 +115,9 @@ The clip-path property creates a clipping region that sets what part of an eleme
 
 
 <br>
+
 # Appearance
+
 The `appearance` property is used to display an element using platform-native styling, based on the operating system's theme.
 
 The `-moz-appearance` and `-webkit-appearance` properties are non-standard versions of this property.
@@ -121,6 +136,7 @@ SO &ndash; I made my own example:
 
 
 <br>
+
 # Custom properties (variables)
 
 ### [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
@@ -158,7 +174,9 @@ element {
 
 
 <br>
+
 # Cascade
+
 The cascade is an algorithm that defines how to combine property values.
 
 Hello... ***Cascading*** Style Sheets.
@@ -177,6 +195,7 @@ If several `@font-face` rules with the same descriptor are defined, only the mos
 
 
 <br>
+
 # Descriptor
 
 A descriptor defines the **characteristics** of an [**at-rule**](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule).
@@ -193,7 +212,9 @@ Each descriptor has:
 
 
 <br>
+
 # @rule
+
 **[At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)** are statements that instruct CSS how to behave.
 
 * They begin with an at sign, '@'
@@ -209,6 +230,7 @@ Each descriptor has:
 
 
 <br>
+
 # Character Encoding
 
 <span style="color:green">**UTF-8**</span> stands for "<span style="color:green">**U**</span>nicode <span style="color:green">**T**</span>ransformation <span style="color:green">**F**</span>ormat - <span style="color:green">**8 bits**</span>."
