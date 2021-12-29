@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>CodePen - 2 handle slider - fill size via 2 pseudos</title>
+  <!-- https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/ -->
   <style>
     * {
       font: inherit;
@@ -34,13 +34,19 @@
     }
 
     .wrap::before {
-      margin-left: calc((var(--a) - var(--min)) / var(--dif) * 100%);
-      width: calc((var(--b) - var(--a)) / var(--dif) * 100%);
+      /* As 'a' increases, the margin increases */
+      margin-left: calc((var(--a) - var(--min))/var(--dif)*100%);
+     /* As 'a' increases, the width decreases */
+     /* As 'b' increases, the width increases */
+      width: calc((var(--b) - var(--a))/var(--dif)*100%);
     }
 
     .wrap::after {
-      margin-left: calc((var(--b) - var(--min)) / var(--dif) * 100%);
-      width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
+      /* As 'b' increases, the margin increases */
+      margin-left: calc((var(--b) - var(--min))/var(--dif)*100%);
+      /* As 'b' increases, the width decreases */
+      /* As 'a' increases, the width increases */
+      width: calc((var(--a) - var(--b))/var(--dif)*100%);
     }
 
     [id=multi-lbl] {
@@ -107,7 +113,7 @@
     }
 
     input[type=range]:focus,
-    input[type=range]:focus + output {
+    input[type=range]:focus+output {
       color: darkorange;
     }
 
@@ -121,22 +127,28 @@
 
     output::after {
       counter-reset: c var(--c);
-      content: "--" attr(for) ": " counter(c) ";";
+      content: "--"attr(for) ": "counter(c) ";";
     }
   </style>
 </head>
-
 <body>
 
-<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: 30; --b: 120; --min: 0; --max: 255">
   <div id="multi-lbl">Multi thumb slider:</div>
   <label class="sr-only" for="a">Value A:</label>
-  <input id="a" max="50" min="-50" type="range" value="-30"/>
+  <input id="a" type="range" min="0" value="30" max="255" />
   <output for="a" style="--c: var(--a)"></output>
   <label class="sr-only" for="b">Value B:</label>
-  <input id="b" max="50" min="-50" type="range" value="20"/>
+  <input id="b" type="range" min="0" value="120" max="255" />
   <output for="b" style="--c: var(--b)"></output>
 </div>
+
+<script>
+  addEventListener('input', e => {
+    let _t = e.target;
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
+  }, false);
+</script>
 
 </body>
 </html>
