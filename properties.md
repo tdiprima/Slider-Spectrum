@@ -1,5 +1,6 @@
 # Properties
 
+<br>
 
 # Relative Lengths
 
@@ -7,8 +8,10 @@
 
 Relative length units scale better between different rendering medium.
 
+<br>
 
 # em
+
 `2em` means **2 times the size of the current** font.
 
 **[To recap](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)**, the `em` unit means "**my parent element**'s font-size".
@@ -19,8 +22,10 @@ So each successive level of nesting gets progressively larger, as each has its f
 
 ### [Example](properties/relative-len.html)
 
+<br>
 
 # rem
+
 To recap, the `rem` unit means "The **root element**'s font-size".
 
 `rem` stands for "**root em**".
@@ -244,12 +249,14 @@ The next largest unit of binary, a **byte**, consists of **8 bits**.
 **Text** is made up of individual characters, each of which is represented in computers by a **string of bits**.
 
 <br>
+
 When we refer to <span style="color:purple">**file sizes**</span>, we're referencing the **number of bytes**. 
 
 * **KB** kilobyte is roughly 1000 bytes
 * **GB** gigabyte is roughly one billion bytes (1,000,000,000)
 
 <br>
+
 <span style="color:red">**ASCII**</span> = <span style="color:red">**A**</span>merican <span style="color: red">**S**</span>tandard <span style="color: red">**C**</span>ode for <span style="color: red">**I**</span>nformation <span style="color: red">**I**</span>nterchange
 
 An early standardized encoding system for text.
@@ -261,6 +268,7 @@ An early standardized encoding system for text.
 It assigns each of these characters a unique **three-digit code** and a unique **byte**.
 
 <br>
+
 <span style="color:blue">**Unicode:**</span> A Way to Store Every Symbol, Ever.
 
 Unicode is the universal standard for encoding **all human languages**. 
