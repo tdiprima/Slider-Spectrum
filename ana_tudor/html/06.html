@@ -113,9 +113,9 @@
       content: "--" attr(for) ": " counter(c) ";";
     }
   </style>
-
 </head>
 <body>
+
 <h1>focus styles <-- Notice, we lost our H1 style.</h1>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
   <div id="multi-lbl">Multi thumb slider:</div>
@@ -124,5 +124,12 @@
   <label class="sr-only" for="b">Value B:</label>
   <input id="b" max="50" min="-50" type="range" value="20">
 </div>
+
+<script>
+  addEventListener('input', e => {
+    let _t = e.target;
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
+  }, false);
+</script>
 </body>
 </html>
