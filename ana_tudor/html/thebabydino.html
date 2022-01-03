@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>CodePen - 2 handle slider - fill size via 2 pseudos</title>
+  <title>2 handle slider - fill size via 2 pseudos</title>
   <!-- https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/ -->
   <style>
     * {
@@ -13,11 +13,11 @@
 
     .wrap {
       --dif: calc(var(--max) - var(--min));
+      position: relative;
       display: grid;
       grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
       grid-template: repeat(2, max-content) 1em/1fr 1fr;
       overflow: hidden;
-      position: relative;
       margin: 1em auto;
       width: 20em;
       background: linear-gradient(0deg, #ccc 1em, transparent 0);
@@ -35,18 +35,18 @@
 
     .wrap::before {
       /* As 'a' increases, the margin increases */
-      margin-left: calc((var(--a) - var(--min))/var(--dif)*100%);
-     /* As 'a' increases, the width decreases */
-     /* As 'b' increases, the width increases */
-      width: calc((var(--b) - var(--a))/var(--dif)*100%);
+      margin-left: calc((var(--a) - var(--min)) / var(--dif) * 100%);
+      /* As 'a' increases, the width decreases */
+      /* As 'b' increases, the width increases */
+      width: calc((var(--b) - var(--a)) / var(--dif) * 100%);
     }
 
     .wrap::after {
       /* As 'b' increases, the margin increases */
-      margin-left: calc((var(--b) - var(--min))/var(--dif)*100%);
+      margin-left: calc((var(--b) - var(--min)) / var(--dif) * 100%);
       /* As 'b' increases, the width decreases */
       /* As 'a' increases, the width increases */
-      width: calc((var(--a) - var(--b))/var(--dif)*100%);
+      width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
     }
 
     [id=multi-lbl] {
@@ -60,11 +60,11 @@
     }
 
     input[type=range] {
-      grid-column: 1/span 2;
-      grid-row: 3;
       z-index: 1;
       top: 0;
       left: 0;
+      grid-column: 1/span 2;
+      grid-row: 3;
       margin: 0;
       background: none;
       color: #000;
@@ -91,18 +91,18 @@
 
     input[type=range]::-webkit-slider-thumb {
       border: none;
+      border-radius: 0;
       width: 1em;
       height: 1em;
-      border-radius: 0;
       background: currentcolor;
       pointer-events: auto;
     }
 
     input[type=range]::-moz-range-thumb {
       border: none;
+      border-radius: 0;
       width: 1em;
       height: 1em;
-      border-radius: 0;
       background: currentcolor;
       pointer-events: auto;
     }
@@ -113,7 +113,7 @@
     }
 
     input[type=range]:focus,
-    input[type=range]:focus+output {
+    input[type=range]:focus + output {
       color: darkorange;
     }
 
@@ -127,19 +127,19 @@
 
     output::after {
       counter-reset: c var(--c);
-      content: "--"attr(for) ": "counter(c) ";";
+      content: "--" attr(for) ": " counter(c) ";";
     }
   </style>
 </head>
 <body>
 
-<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: 30; --b: 120; --min: 0; --max: 255">
+<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: 70; --b: 185; --min: 0; --max: 255">
   <div id="multi-lbl">Multi thumb slider:</div>
   <label class="sr-only" for="a">Value A:</label>
-  <input id="a" type="range" min="0" value="30" max="255" />
+  <input id="a" max="255" min="0" type="range" value="70"/>
   <output for="a" style="--c: var(--a)"></output>
   <label class="sr-only" for="b">Value B:</label>
-  <input id="b" type="range" min="0" value="120" max="255" />
+  <input id="b" max="255" min="0" type="range" value="185"/>
   <output for="b" style="--c: var(--b)"></output>
 </div>
 
@@ -152,3 +152,4 @@
 
 </body>
 </html>
+
