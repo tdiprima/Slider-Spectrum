@@ -1,0 +1,193 @@
+<title>CodePen - Simple slider</title>
+<!-- Ana Tudor -->
+<!-- https://codepen.io/thebabydino/pen/eEqjWN?editors=1000 -->
+<!-- https://css-tricks.com/the-output-element/#comment-1612722 -->
+<!-- Chris: https://css-tricks.com/value-bubbles-for-range-inputs/ -->
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  html {
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), transparent), url(https://images.unsplash.com/photo-1517016006573-2eefaa2f5b63?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50%/cover;
+  }
+
+  .wrap {
+    --pos: calc((var(--val) - var(--min)) * 20em / (var(--max) - var(--min)));
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    margin: 1em auto;
+    width: calc(20em + 1em);
+    font: 1.5em trebuchet ms, tahoma, sans-serif;
+  }
+
+  [type=range] {
+    border: solid 0 transparent;
+    padding: 0.25em 0;
+    width: inherit;
+    height: 1.5em;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  [type=range]::-webkit-slider-runnable-track, [type=range]::-webkit-slider-thumb, [type=range] {
+    -webkit-appearance: none;
+  }
+
+  [type=range]::-webkit-slider-runnable-track {
+    border: none;
+    width: 100%;
+    height: 0.25em;
+    border-radius: 0.125em;
+    background: #bbb;
+    background: radial-gradient(circle, #cc8492 0.125em, transparent 0) calc(0.5em - .5 * calc(20em / (var(--max) - var(--min)))) 50%/0 0, radial-gradient(circle at calc(var(--pos) + 0.5em) 50%, transparent 0.5em, #bbb 0);
+    color: transparent;
+    transition: background-size 0.3s;
+  }
+
+  [type=range]::-moz-range-track {
+    border: none;
+    width: 100%;
+    height: 0.25em;
+    border-radius: 0.125em;
+    background: #bbb;
+    background: radial-gradient(circle, #cc8492 0.125em, transparent 0) calc(0.5em - .5 * calc(20em / (var(--max) - var(--min)))) 50%/0 0, radial-gradient(circle at calc(var(--pos) + 0.5em) 50%, transparent 0.5em, #bbb 0);
+    color: transparent;
+    transition: background-size 0.3s;
+  }
+
+  [type=range]::-ms-track {
+    border: none;
+    width: 100%;
+    height: 0.25em;
+    border-radius: 0.125em;
+    background: #bbb;
+    background: radial-gradient(circle, #cc8492 0.125em, transparent 0) calc(0.5em - .5 * calc(20em / (var(--max) - var(--min)))) 50%/0 0, radial-gradient(circle at calc(var(--pos) + 0.5em) 50%, transparent 0.5em, #bbb 0);
+    color: transparent;
+    transition: background-size 0.3s;
+  }
+
+  [type=range]::-webkit-slider-thumb {
+    margin-top: -0.375em;
+    box-sizing: border-box;
+    border: none;
+    padding: 0.1875em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #bbb content-box;
+    transition: 0.3s;
+  }
+
+  [type=range]::-moz-range-thumb {
+    box-sizing: border-box;
+    border: none;
+    padding: 0.1875em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #bbb content-box;
+    transition: 0.3s;
+  }
+
+  [type=range]::-ms-thumb {
+    margin-top: 0;
+    box-sizing: border-box;
+    border: none;
+    padding: 0.1875em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #bbb content-box;
+    transition: 0.3s;
+  }
+
+  [type=range]::-ms-fill-lower, [type=range]::-ms-fill-upper {
+    background: transparent;
+  }
+
+  [type=range]::-ms-tooltip {
+    display: none;
+  }
+
+  [type=range]:focus {
+    outline: none;
+  }
+
+  [type=range]:focus::-webkit-slider-runnable-track {
+    background-size: calc(20em / (var(--max) - var(--min))) 100%, 100%;
+  }
+
+  [type=range]:focus::-moz-range-track {
+    background-size: calc(20em / (var(--max) - var(--min))) 100%, 100%;
+  }
+
+  [type=range]:focus::-ms-track {
+    background-size: calc(20em / (var(--max) - var(--min))) 100%, 100%;
+  }
+
+  [type=range]:focus::-webkit-slider-thumb {
+    padding: 0;
+    background: #eb1f46;
+  }
+
+  [type=range]:focus::-moz-range-thumb {
+    padding: 0;
+    background: #eb1f46;
+  }
+
+  [type=range]:focus::-ms-thumb {
+    padding: 0;
+    background: #eb1f46;
+  }
+
+  [type=range]:focus ~ output {
+    --f: 1;
+  }
+
+  [type=range] + label:after {
+    content: ":";
+  }
+
+  [type=range] ~ output {
+    --f: 0;
+    position: absolute;
+    top: 100%;
+    left: 0.5em;
+    padding: 0.125em 0.5em;
+    border-radius: 5px;
+    transform: translate(calc(var(--pos) - 50%)) scale(var(--f));
+    opacity: var(--f);
+    background: #eb1f46;
+    color: #bbb;
+    transition: opacity 0.3s;
+  }
+</style>
+
+<!--A script that lets you use only un-prefixed CSS properties everywhere.
+It works behind the scenes, adding the current browser's prefix to any CSS code, only when it's needed.-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>-->
+
+<div class="wrap" style="--max: 10; --min: 2; --val: 2">
+  <input id="r" max="10" min="2" type="range" value="2"/>
+  <label for="r">multiplier</label>
+  <output for="r">2</output>
+</div>
+
+<script>
+  const _R = document.getElementById('r'),
+    _W = _R.parentNode,
+    _O = _W.querySelector('output');
+
+  function update() {
+    _W.style.setProperty('--val', +_R.value);
+    _O.textContent = +_R.value;
+  }
+
+  _R.addEventListener('change', update, false);
+  _R.addEventListener('input', update, false);
+</script>

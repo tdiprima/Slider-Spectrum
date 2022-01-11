@@ -1,0 +1,170 @@
+<!-- Ana Tudor -->
+<!-- https://css-tricks.com/the-output-element/#comment-1612722 -->
+
+<link href="https://css-tricks.com/the-output-element/feed/" rel="alternate" title="CSS-Tricks &raquo; The Output Element Comments Feed"
+      type="application/rss+xml"/>
+
+<link data-media="all" href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1641416079722'
+      id='css-tricks-style-css'
+      media="not all" onload="this.media=this.dataset.media; delete this.dataset.media; this.removeAttribute( 'onload' );" rel='stylesheet'
+      type='text/css'/>
+
+<link data-media="all" href='https://c0.wp.com/c/5.8.3/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css'
+      id='mediaelement-css' media="not all"
+      onload="this.media=this.dataset.media; delete this.dataset.media; this.removeAttribute( 'onload' );" rel='stylesheet'
+      type='text/css'/>
+
+<link data-media="all" href='https://c0.wp.com/c/5.8.3/wp-includes/js/mediaelement/wp-mediaelement.min.css'
+      id='wp-mediaelement-css' media="not all"
+      onload="this.media=this.dataset.media; delete this.dataset.media; this.removeAttribute( 'onload' );" rel='stylesheet'
+      type='text/css'/>
+
+<link data-media="all" href='https://c0.wp.com/p/woocommerce/6.0.0/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css'
+      id='wc-blocks-vendors-style-css'
+      media="not all" onload="this.media=this.dataset.media; delete this.dataset.media; this.removeAttribute( 'onload' );" rel='stylesheet'
+      type='text/css'/>
+
+<link data-media="all" href='https://c0.wp.com/p/woocommerce/6.0.0/packages/woocommerce-blocks/build/wc-blocks-style.css'
+      id='wc-blocks-style-css' media="not all"
+      onload="this.media=this.dataset.media; delete this.dataset.media; this.removeAttribute( 'onload' );" rel='stylesheet'
+      type='text/css'/>
+
+<style>
+  body {
+    margin: 30px;
+  }
+</style>
+
+<li class="comment byuser comment-author-thebabydino odd alt thread-odd thread-alt depth-1" id="li-comment-1612722">
+  <div class="comment-wrap" id="comment-1612722">
+    <div class="comment-author-wrap">
+      <div class="comment-author">Ana Tudor</div>
+      <div class="comment-time"><a href="https://css-tricks.com/the-output-element/#comment-1612722"><span
+        class="screen-reader">Permalink to comment</span>#</a>
+        <time datetime="2017-10-27T05:09:36-07:00">October 27, 2017</time>
+      </div>
+    </div>
+    <div class="comment-content">
+      <p>I've used it to create tooltips for range slider thumbs.</p>
+      <p><img alt="gif" src="https://i.imgur.com/c397gP0.gif"></p>
+      <p>The structure I use is a wrapper element with a range <code>input</code>, a <code>label</code> and an <code>output</code>
+        (the last two being tied to the <code>input</code> via the <code>for</code> attribute). I generate this
+        structure with Pug so that I can put the minimum, the maximum and the current value of the range into variables
+        (you'll see in a moment why):</p>
+      <pre><code class="Pug">- var max = 10, min = 2, val = min;
+
+.wrap(style=`--max: ${max}; --min: ${min}; --val: ${val}`)
+    input#r(type='range' min=min max=max value=val)
+    label(for='r') multiplier
+    output(for='r') #{val}
+</code></pre>
+      <p>In the CSS, I set <code>display: flex</code> and <code>flex-direction: column-reverse</code> on the wrapper, so
+        that the <code>label</code> shows up before the <code>input</code>. I then set <code>position: relative</code>
+        on this wrapper and <code>position: absolute</code> on the <code>output</code>. I also make sure that both the
+        <code>input</code> and its track have the same <code>width</code> as the wrapper.</p>
+      <pre><code class="CSS">.wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+input { width: inherit }
+
+output { position: absolute }
+</code></pre>
+      <p>At this point, setting <code>left: 0</code> on the <code>output</code> would make its left edge align with the
+        left edge of the wrapper, which coincides with the left edge of the <code>input</code>. Setting <code>left:
+          100%</code> would make its left edge align with the right edge of its parent (the wrapper), which coincides
+        with the right edge of the <code>input</code>. If we also set <code>transform: translate(-50%)</code>, then its
+        middle vertical axis gets aligned with the left edge of the <code>input</code> (the <code>left: 0</code> case)
+        or with the right edge of the <code>input</code>.</p>
+      <p>But if we want it to act like a tooltip for the range thumb, then it needs to move within the same limits as
+        the thumb. The thumb moves within the limits of the <strong>track</strong>‘s <code>content-box</code> in Chrome
+        and within the limits of the <strong>input</strong>‘s <code>content-box</code> in Firefox and Edge. But if we
+        have the same <code>width</code> on the wrapper, actual range input and its range track, no <code>padding</code>,
+        no <code>border</code> and also no <code>margin</code> on the inner ones… then the <code>content-box</code> is
+        the same for all three of them.</p>
+      <p>This means that the central vertical axis of the thumb moves between half a thumb width to the right of the
+        left edge of the input and half a thumb width to the left of the right edge of the input.</p>
+      <p>So we set the <code>width</code> of the wrapper (inherited by both the <code>input</code> and its track) to the
+        distance between these two endpoints (<code>$d</code>) plus the thumb width (<code>$tw</code>) because we have
+        half a thumb witdth at one end and a second half at the other end. We also set the <code>left</code> for the
+        <code>output</code> to half a thumb width (<code>.5*$tw</code>):</p>
+      <pre><code class="SCSS">.wrap { width: $d + $tw }
+
+output { left: .5*$tw }
+</code></pre>
+      <p>We then compute the numeric range of motion (difference between the max and min of the input), the starting
+        position (<code>--pos</code>) of the <code>output</code> element using the CSS variables set inline and then we
+        add this position value to in the <code>translate()</code> function:</p>
+      <pre><code class="SCSS">.wrap {
+    --range: calc(var(--max) - var(--min));
+    --pos: calc((var(--val) - var(--min))*#{$d}/var(--range))
+}
+
+output { transform: translate(calc(var(--pos) - 50%)) }
+</code></pre>
+      <p>Finally, in the JS, we need to update <code>--val</code> and the <code>output</code>‘s value whenever the
+        <code>input</code>‘s value changes:</p>
+      <pre><code class="JS">const _R = document.getElementById('r'),
+            _W = _R.parentNode,
+            _O = _W.querySelector('output');
+
+_R.addEventListener('input', () =&gt; {
+    _W.style.setProperty('--val', +_R.value);
+    _O.textContent = +_R.value
+}, false);
+</code></pre>
+      <p>This makes the <code>output</code> move along with the thumb of the range. No other JS needed for positioning,
+        all done with a bit of CSS variable magic.</p>
+      <p>You can see a fully working <a href="https://codepen.io/thebabydino/pen/eEqjWN?editors=1000"
+                                        rel="nofollow ugc">demo of this</a> (or if video is your thing, you can see me
+        embarrass myself <a href="https://www.youtube.com/watch?v=rd1J27SLrPU#t=5h53m36s" rel="nofollow ugc">live
+          coding</a> the thing at CodePenDay Hamburg… apparently, I can't spell attribute names).</p>
+      <p>It didn't work in Edge at the time due to a bug I've been told has been fixed in this month's release.</p>
+    </div>
+    <div class="comment-actions">
+      <div class="reply">
+      </div>
+    </div>
+  </div>
+  <ul class="children">
+    <li class="comment even depth-2" id="li-comment-1612785">
+      <div class="comment-wrap" id="comment-1612785">
+        <div class="comment-author-wrap">
+          <div class="comment-author">Dan Franklin</div>
+          <div class="comment-time"><a href="https://css-tricks.com/the-output-element/#comment-1612785"><span
+            class="screen-reader">Permalink to comment</span>#</a>
+            <time datetime="2017-11-01T10:01:54-07:00">November 1, 2017</time>
+          </div>
+        </div>
+        <div class="comment-content">
+          <p>Nice!</p>
+        </div>
+        <div class="comment-actions">
+          <div class="reply">
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="comment odd alt depth-2" id="li-comment-1612791">
+      <div class="comment-wrap" id="comment-1612791">
+        <div class="comment-author-wrap">
+          <div class="comment-author">Neil</div>
+          <div class="comment-time"><a href="https://css-tricks.com/the-output-element/#comment-1612791"><span
+            class="screen-reader">Permalink to comment</span>#</a>
+            <time datetime="2017-11-01T15:16:46-07:00">November 1, 2017</time>
+          </div>
+        </div>
+        <div class="comment-content">
+          <p>Lovely. Why listen/react to both "change" and "update" events?<br>
+            It makes SR read the updated value twice.</p>
+        </div>
+        <div class="comment-actions">
+          <div class="reply">
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
