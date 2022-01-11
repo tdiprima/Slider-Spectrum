@@ -1,9 +1,9 @@
 <title>Output</title>
-<!--  https://css-tricks.com/the-output-element/-->
-<link rel="stylesheet" href="style.css">
+<!-- https://css-tricks.com/the-output-element/ -->
+<link href="style.css" rel="stylesheet">
 
 <!--NORMAL-->
-<input type="range" name="quantity" id="quantity" min="0" max="100">
+<input id="quantity" max="100" min="0" name="quantity" type="range">
 <output for="quantity"></output>
 
 <script>
@@ -11,7 +11,7 @@
   const output = document.querySelector('output')
 
   // setDefaultState instead of setting element 'output' value
-  function setDefaultState () {
+  function setDefaultState() {
     output.value = rangeInput.value
   }
 
