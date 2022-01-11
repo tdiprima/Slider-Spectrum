@@ -52,9 +52,16 @@
     // output.innerHTML = rangeInput.value
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    setDefaultState()
-  })
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   setDefaultState()
+  // })
+
+  /*
+ Just a small memory efficiency - there's no need to create an anonymous
+ function to call setDefaultState (and do nothing else) when you could
+ just pass setDefaultState directly.
+ */
+  document.addEventListener('DOMContentLoaded', setDefaultState)
 </script>
 </body>
 </html>
