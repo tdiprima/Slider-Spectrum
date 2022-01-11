@@ -113,16 +113,17 @@
 
     output {
       grid-row: 2;
+      background-color: #8cffa0;
     }
 
     output:last-child {
       text-align: right;
+      background-color: #8ca0ff;
     }
 
-    /* Change the output display here */
+    /* Change the output display here (almost) */
     output::after {
       counter-reset: c var(--c);
-      /*content: "--" attr(for) ": " counter(c) ";";*/
       content: "0 to " counter(c);
       /*content: counter(c) " to 255";*/
     }
@@ -149,6 +150,8 @@
     // The + changes the string value to a number.
     _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
   }, false);
+
+  // console.log(document.getElementsByTagName('output'))
 </script>
 
 </body>
