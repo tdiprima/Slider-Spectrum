@@ -1,0 +1,25 @@
+<title>Output</title>
+<!--  https://css-tricks.com/the-output-element/-->
+<link href="style.css" rel="stylesheet">
+
+<!--READER IMPROVEMENTS-->
+<input id="quantity" max="100" min="0" name="quantity" type="range">
+<output for="quantity"></output>
+
+<script>
+  const rangeInput = document.querySelector('input')
+  const output = document.querySelector('output')
+
+  // This is the smart way to do it a.k.a the DRY-way.
+  function setState() {
+    output.value = rangeInput.value
+  }
+
+  rangeInput.addEventListener('input', setState)
+
+  document.addEventListener('DOMContentLoaded', setState)
+
+  // Just a small memory efficiency - there's no need to create anonymous function to call setDefaultState
+  // (and do nothing else) when you could just pass setDefaultState directly:
+  // document.addEventListener('DOMContentLoaded', setDefaultState)
+</script>
