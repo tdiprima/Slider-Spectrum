@@ -13,30 +13,19 @@
     }
 
     .wrap {
-      display: grid; /* makes the sliders overlap */
-      /* Instead of 'grid-template-rows'; 'grid-template: repeat' */
+      display: grid;
       grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
       grid-template: repeat(2, max-content) 1em/1fr 1fr;
       overflow: hidden;
-      position: relative; /* RELATIVE */
-      margin: 1em auto; /* centers it on the page */
+      position: relative;
+      margin: 1em auto;
       width: 20em;
       background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
       font-family: ubuntu mono, consolas, monaco, monospace; /* ADDED FONT FAMILY */
     }
 
-    /* wrapper */
     [id=multi-lbl] {
       grid-column: 1/span 2;
-    }
-
-    /* Hides: */
-    /* Value A: */
-    /* Value B: */
-    .sr-only {
-      position: absolute; /* ABSOLUTE */
-      -webkit-clip-path: inset(50%);
-              clip-path: inset(50%);
     }
 
     /* placement: track, thumb, background */
@@ -98,12 +87,10 @@
       color: darkorange;
     }
 
-    /* output */
     output {
       grid-row: 2;
     }
 
-    /* output:last-child */
     output:last-child {
       text-align: right;
     }
@@ -119,9 +106,9 @@
 <h1>focus styles <-- Notice, we lost our H1 style.</h1>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
   <div id="multi-lbl">Multi thumb slider:</div>
-  <label class="sr-only" for="a">Value A:</label>
+  <output for="a" style="--c: var(--a)"></output>
+  <output for="b" style="--c: var(--b)"></output>
   <input id="a" max="50" min="-50" type="range" value="-30">
-  <label class="sr-only" for="b">Value B:</label>
   <input id="b" max="50" min="-50" type="range" value="20">
 </div>
 
