@@ -18,13 +18,6 @@
       background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
     }
 
-    /* Visually hide the <label> elements: */
-    .sr-only {
-      position: absolute;
-      -webkit-clip-path: inset(50%);
-              clip-path: inset(50%);
-    }
-
     /* Range is in row 2 */
     input[type=range] {
       grid-column: 1;
@@ -89,11 +82,9 @@
   <!-- Row 1: -->
   <div id="multi-lbl">Multi thumb slider:</div>
   <!-- Row 2: -->
-  <label class="sr-only" for="a">Value A:</label>
   <input id="a" max="50" min="-50" type="range" value="-30">
   <!-- Row 3: -->
   <output for="a" style="--c: var(--a)"></output>
-  <label class="sr-only" for="b">Value B:</label>
   <!-- Row 2: -->
   <input id="b" max="50" min="-50" type="range" value="20">
   <!-- Row 3: -->
