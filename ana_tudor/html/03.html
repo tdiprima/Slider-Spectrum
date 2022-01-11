@@ -7,27 +7,26 @@
   <title>functionality</title>
 
   <style>
+    /* wrapper is a middle-aligned grid with two rows and one column */
     .wrap {
-      display: grid; /* makes the sliders overlap */
+      display: grid;
       grid-template-rows: -webkit-max-content 1em;
       grid-template-rows: max-content 1em;
       overflow: hidden;
-      position: relative; /* RELATIVE */
-      margin: 1em auto; /* centers it on the page */
+      position: relative;
+      margin: 1em auto;
       width: 20em;
       background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
     }
 
-    /* Hides: */
-    /* Value A: */
-    /* Value B: */
+    /* Visually hide the <label> elements: */
     .sr-only {
-      position: absolute; /* ABSOLUTE */
+      position: absolute;
       -webkit-clip-path: inset(50%);
               clip-path: inset(50%);
     }
 
-    /* 1 column, 2 rows */
+    /* Place the sliders, one on top of the other, in the bottom grid cell: */
     input[type=range] {
       grid-column: 1;
       grid-row: 2;
@@ -87,13 +86,20 @@
 </head>
 <body>
 <h1>output counter</h1>
-<h2>no visible effect</h2>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+  <!-- Row 1:-->
   <div id="multi-lbl">Multi thumb slider:</div>
+  <!-- Row 2:-->
   <label class="sr-only" for="a">Value A:</label>
   <input id="a" max="50" min="-50" type="range" value="-30">
   <label class="sr-only" for="b">Value B:</label>
   <input id="b" max="50" min="-50" type="range" value="20">
 </div>
+<script>
+  addEventListener('input', e => {
+    const _t = e.target
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
+  }, false)
+</script>
 </body>
 </html>

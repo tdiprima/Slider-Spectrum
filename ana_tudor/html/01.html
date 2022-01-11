@@ -7,26 +7,25 @@
   <title>structure & layout</title>
 
   <style>
+    /* 2 rows, 1 column */
     .wrap {
-      display: grid; /* makes the sliders overlap */
+      display: grid;
       grid-template-rows: -webkit-max-content 1em;
       grid-template-rows: max-content 1em;
-      overflow: hidden;
-      position: relative; /* RELATIVE */
+      overflow: hidden; /* in case <label> elements overflow */
+      position: relative;
       margin: 1em auto; /* centers it on the page */
       width: 20em;
     }
 
-    /* Hides: */
-    /* Value A: */
-    /* Value B: */
+    /* To visually hide the <label> elements, we absolutely position them and clip them to nothing: */
     .sr-only {
-      position: absolute; /* ABSOLUTE */
+      position: absolute;
       -webkit-clip-path: inset(50%);
               clip-path: inset(50%);
     }
 
-    /* 1 column, 2 rows */
+    /* Place the sliders, one on top of the other, in the bottom grid cell: */
     input[type=range] {
       grid-column: 1;
       grid-row: 2;
@@ -37,7 +36,9 @@
 <body>
 <h1>Plain old slider</h1>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+  <!-- Row 1:-->
   <div id="multi-lbl">Multi thumb slider:</div>
+  <!-- Row 2:-->
   <label class="sr-only" for="a">Value A:</label>
   <input id="a" max="50" min="-50" type="range" value="-30">
   <label class="sr-only" for="b">Value B:</label>

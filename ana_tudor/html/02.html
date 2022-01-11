@@ -7,36 +7,34 @@
   <title>basic look</title>
 
   <style>
+    /* wrapper is a middle-aligned grid with two rows and one column */
     .wrap {
-      display: grid; /* makes the sliders overlap */
+      display: grid;
       grid-template-rows: -webkit-max-content 1em;
       grid-template-rows: max-content 1em;
       overflow: hidden;
-      position: relative; /* RELATIVE */
-      margin: 1em auto; /* centers it on the page */
+      position: relative;
+      margin: 1em auto;
       width: 20em;
-      background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track' */
+      background: linear-gradient(0deg, #ccc 1em, transparent 0); /* emulate track with wrapper background */
     }
 
-    /* Hides: */
-    /* Value A: */
-    /* Value B: */
+    /* To visually hide the <label> elements, we absolutely position them and clip them to nothing: */
     .sr-only {
-      position: absolute; /* ABSOLUTE */
+      position: absolute;
       -webkit-clip-path: inset(50%);
               clip-path: inset(50%);
     }
 
-    /* 1 column, 2 rows */
+    /* Place the sliders, one on top of the other, in the bottom grid cell: */
     input[type=range] {
       grid-column: 1;
       grid-row: 2;
-      /* And... */
       margin: 0;
       background: none; /* get rid of white Chrome background */
       color: #000;
       font: inherit; /* In reality, it fixes the square thumbs */
-      pointer-events: none;
+      pointer-events: none; /* let clicks pass through */
     }
 
     input[type=range]::-webkit-slider-runnable-track,
@@ -80,11 +78,19 @@
 <body>
 <h1>Fancy track &amp; thumbs</h1>
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+  <!-- Row 1:-->
   <div id="multi-lbl">Multi thumb slider:</div>
+  <!-- Row 2:-->
   <label class="sr-only" for="a">Value A:</label>
   <input id="a" max="50" min="-50" type="range" value="-30">
   <label class="sr-only" for="b">Value B:</label>
   <input id="b" max="50" min="-50" type="range" value="20">
 </div>
+<script>
+  addEventListener('input', e => {
+    let _t = e.target;
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
+  }, false);
+</script>
 </body>
 </html>

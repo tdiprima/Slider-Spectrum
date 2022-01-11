@@ -14,7 +14,7 @@
 
     .wrap {
       --dif: calc(var(--max) - var(--min)); /* DIF: max - min */
-      display: grid;  /* makes the sliders overlap */
+      display: grid; /* makes the sliders overlap */
       /* Instead of 'grid-template-rows'; 'grid-template: repeat' */
       grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
       grid-template: repeat(2, max-content) 1em/1fr 1fr;
@@ -26,32 +26,32 @@
       font-family: ubuntu mono, consolas, monaco, monospace;
     }
 
-    /* WRAP::AFTER adds the purple bar */
+    .ishkabibble {
+      background: #f90;
+      height: 4em;
+      /* We set width to the second value (--b) minus the first (--a) */
+      width: calc(var(--b) - var(--a));
+      /* Set min-width to the first value (--a) minus the second one (--b) */
+      min-width: calc(var(--a) - var(--b));
+    }
+
+    /* FILL SIZE via width/min-width */
     .wrap::after {
       grid-column: 1/span 2;
       grid-row: 3;
-      /* FILL SIZE via width/min-width */
-      width: calc((var(--b) - var(--a))/var(--dif)*100%);
-      min-width: calc((var(--a) - var(--b))/var(--dif)*100%);
+      /* In order to represent the width and min-width values as percentages, we need to divide the difference
+      between our two values by the difference (--dif) between the maximum and the minimum of the range inputs
+      and then multiply the result we get by 100%. */
+      width: calc((var(--b) - var(--a)) / var(--dif) * 100%);
+      min-width: calc((var(--a) - var(--b)) / var(--dif) * 100%);
       background: #95a;
       content: "";
     }
 
-    /* wrapper */
     [id=multi-lbl] {
       grid-column: 1/span 2;
     }
 
-    /* Hides: */
-    /* Value A: */
-    /* Value B: */
-    .sr-only {
-      position: absolute; /* ABSOLUTE */
-      -webkit-clip-path: inset(50%);
-              clip-path: inset(50%);
-    }
-
-    /* placement: track, thumb, background */
     /* 1 column, 3 rows */
     input[type=range] {
       grid-column: 1/span 2;
@@ -60,7 +60,7 @@
       top: 0;
       left: 0;
       margin: 0;
-      background: none; /* get rid of white Chrome background */
+      background: none;
       color: #000;
       pointer-events: none;
     }
@@ -74,29 +74,29 @@
     input[type=range]::-webkit-slider-runnable-track {
       width: 100%;
       height: 100%;
-      background: none; /* get rid of white Chrome background */
+      background: none;
     }
 
     input[type=range]::-moz-range-track {
       width: 100%;
       height: 100%;
-      background: none; /* get rid of Firefox track background */
+      background: none;
     }
 
     input[type=range]::-webkit-slider-thumb {
-      border: none; /* get rid of thumb border */
+      border: none;
       width: 1em;
       height: 1em;
-      border-radius: 0; /* get rid of corner rounding */
+      border-radius: 0;
       background: currentcolor;
       pointer-events: auto;
     }
 
     input[type=range]::-moz-range-thumb {
-      border: none; /* get rid of Firefox thumb border */
+      border: none;
       width: 1em;
       height: 1em;
-      border-radius: 0; /* get rid of Firefox corner rounding (bc they're circles) */
+      border-radius: 0; /* get rid of Firefox corner rounding (otherwise, they're circles) */
       background: currentcolor; /* black */
       pointer-events: auto; /* catch clicks */
     }
@@ -111,41 +111,45 @@
       color: darkorange;
     }
 
-    /* output */
     output {
       grid-row: 2;
     }
 
-    /* output:last-child */
     output:last-child {
       text-align: right;
     }
 
-    /* output::after */
+    /* Change the output display here */
     output::after {
       counter-reset: c var(--c);
-      content: "--" attr(for) ": " counter(c) ";";
+      /*content: "--" attr(for) ": " counter(c) ";";*/
+      content: "0 to " counter(c);
+      /*content: counter(c) " to 255";*/
     }
   </style>
 </head>
 <body>
 
 <h1>Added purple to track</h1>
-<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: -30; --b: 20; --min: -50; --max: 50">
+<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: 30; --b: 70; --min: 0; --max: 255">
   <div id="multi-lbl">Multi thumb slider:</div>
-  <label class="sr-only" for="a">Value A:</label>
-  <input id="a" max="50" min="-50" type="range" value="-30">
+  <input id="a" max="255" min="0" type="range" value="30">
+  <!-- We're setting --c to this variable, --a: -->
   <output for="a" style="--c: var(--a)"></output>
-  <label class="sr-only" for="b">Value B:</label>
-  <input id="b" max="50" min="-50" type="range" value="20">
+  <input id="b" max="255" min="0" type="range" value="70">
+  <!-- We're setting --c to this variable, --b: -->
   <output for="b" style="--c: var(--b)"></output>
 </div>
 
 <script>
+  // Setting var --a and --b:
   addEventListener('input', e => {
     let _t = e.target;
+    // setProperty(property, value)
+    // The + changes the string value to a number.
     _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
   }, false);
 </script>
+
 </body>
 </html>

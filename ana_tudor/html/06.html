@@ -127,9 +127,9 @@
 
 <script>
   addEventListener('input', e => {
-    let _t = e.target;
-    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
-  }, false);
+    const _t = e.target
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
+  }, false)
 </script>
 </body>
 </html>
