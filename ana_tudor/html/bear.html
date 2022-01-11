@@ -49,12 +49,6 @@
       grid-column: 1/span 2;
     }
 
-    .sr-only {
-      position: absolute;
-      -webkit-clip-path: inset(50%);
-      clip-path: inset(50%);
-    }
-
     input[type=range] {
       z-index: 1;
       top: 0;
@@ -131,12 +125,10 @@
 
 <div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: 30; --b: 120; --min: 0; --max: 255">
   <div id="multi-lbl">Multi thumb slider:</div>
-  <label class="sr-only" for="a">Value A:</label>
-  <input id="a" max="255" min="0" type="range" value="30"/>
   <output for="a" style="--c: var(--a)"></output>
-  <label class="sr-only" for="b">Value B:</label>
-  <input id="b" max="255" min="0" type="range" value="120"/>
   <output for="b" style="--c: var(--b)"></output>
+  <input id="a" max="255" min="0" type="range" value="30"/>
+  <input id="b" max="255" min="0" type="range" value="120"/>
 </div>
 
 <script>
