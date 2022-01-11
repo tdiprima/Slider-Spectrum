@@ -7,7 +7,6 @@
   <title>focus style</title>
 
   <style>
-    /* MOVED font inherit from 'input[type=range]' to 'all' */
     * {
       font: inherit;
     }
@@ -20,65 +19,65 @@
       position: relative;
       margin: 1em auto;
       width: 20em;
-      background: linear-gradient(0deg, #ccc 1em, transparent 0); /* the gray 'track'; emulate track with wrapper background */
-      font-family: ubuntu mono, consolas, monaco, monospace; /* ADDED FONT FAMILY */
+      background: linear-gradient(0deg, #ccc 1em, transparent 0);
+      font-family: ubuntu mono, consolas, monaco, monospace;
     }
 
     [id=multi-lbl] {
       grid-column: 1/span 2;
     }
 
-    /* placement: track, thumb, background */
-    /* 1 column, 3 rows */
     input[type=range] {
       grid-column: 1/span 2;
       grid-row: 3;
-      z-index: 1; /* added z-index */
+      z-index: 1;
       top: 0;
       left: 0;
       margin: 0;
-      background: none; /* get rid of white Chrome background */
+      background: none;
+      /* get rid of white Chrome background */
       color: #000;
       pointer-events: none;
     }
 
-    input[type=range]::-webkit-slider-runnable-track,
-    input[type=range]::-webkit-slider-thumb,
-    input[type=range] {
+    input[type=range]::-webkit-slider-runnable-track, input[type=range]::-webkit-slider-thumb, input[type=range] {
       -webkit-appearance: none;
     }
 
     input[type=range]::-webkit-slider-runnable-track {
       width: 100%;
       height: 100%;
-      background: none; /* get rid of white Chrome background */
+      background: none;
     }
 
     input[type=range]::-moz-range-track {
       width: 100%;
       height: 100%;
-      background: none; /* get rid of Firefox track background */
+      background: none;
     }
 
     input[type=range]::-webkit-slider-thumb {
-      border: none; /* get rid of thumb border */
+      border: none;
+      /* get rid of Chrome thumb border */
       width: 1em;
       height: 1em;
-      border-radius: 0; /* get rid of corner rounding */
+      border-radius: 0;
+      /* get rid of Chrome corner rounding */
       background: currentcolor;
       pointer-events: auto;
     }
 
     input[type=range]::-moz-range-thumb {
-      border: none; /* get rid of Firefox thumb border */
+      border: none;
+      /* get rid of Firefox thumb border */
       width: 1em;
       height: 1em;
-      border-radius: 0; /* get rid of Firefox corner rounding (they're circles!) */
-      background: currentcolor; /* black */
-      pointer-events: auto; /* catch clicks */
+      border-radius: 0;
+      /* get rid of Firefox corner rounding */
+      background: currentcolor;
+      pointer-events: auto;
     }
 
-    /* THE ORANGE PART */
     input[type=range]:focus {
       z-index: 2;
     }
