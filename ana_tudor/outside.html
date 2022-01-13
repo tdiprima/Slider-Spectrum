@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Outside</title>
+  <!-- https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/ -->
+  <link rel="stylesheet" href="css/bear.css" />
+</head>
+<body>
+
+<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: 30; --b: 120; --min: 0; --max: 255">
+  <div id="multi-lbl">Multi thumb slider:</div>
+  <output for="a" style="--c: var(--a)"></output>
+  <output for="b" style="--c: var(--b)"></output>
+  <input id="a" max="255" min="0" type="range" value="30"/>
+  <input id="b" max="255" min="0" type="range" value="120"/>
+</div>
+
+<script>
+  addEventListener('input', e => {
+    let input = e.target;
+    let wrapper = input.parentNode;
+    wrapper.style.setProperty(`--${input.id}`, +input.value);
+  }, false);
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Inside</title>
+  <!-- https://codepen.io/thebabydino/pen/KKKrXQE -->
+  <!-- https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/ -->
+  <!-- <link rel="stylesheet" href="css/thebabydino.css" /> -->
+  <link rel="stylesheet" href="css/ana.css" />
+</head>
+<body>
+
+<div aria-labelledby="multi-lbl" class="wrap" role="group" style="--a: 70; --b: 185; --min: 0; --max: 255">
+  <div id="multi-lbl">Multi thumb slider:</div>
+  <input id="a" max="255" min="0" type="range" value="70"/>
+  <output for="a" style="--c: var(--a)"></output>
+  <input id="b" max="255" min="0" type="range" value="185"/>
+  <output for="b" style="--c: var(--b)"></output>
+</div>
+
+<script>
+  addEventListener('input', e => {
+    let _t = e.target;
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
+  }, false);
+</script>
+
+</body>
+</html>
