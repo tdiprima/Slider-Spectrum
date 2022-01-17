@@ -2,43 +2,37 @@
 <!-- https://www.geeksforgeeks.org/creating-range-slider-html-using-javascript/ -->
 <style>
   .rangeSlider {
-    width: 50%;
-  }
-
-  .mySlider {
     -webkit-appearance: none;
-    background: #FCF3CF;
-    width: 50%;
-    height: 20px;
+    background: lightblue;
+    height: 12px;
     opacity: 2;
   }
 
-  .mySlider::-webkit-slider-thumb {
+  .rangeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     cursor: pointer;
-    background: #34495E;
-    width: 5%;
-    height: 20px;
+    background: whitesmoke;
+    width: 12px;
+    height: 12px;
   }
 
-  .mySlider:hover {
+  .rangeSlider:hover {
     opacity: 1;
   }
 
-  /*input[type=range]::-moz-range-thumb {*/
-  /*  background-color: green;*/
-  /*}*/
+  input[type=range]::-moz-range-thumb {
+    background-color: whitesmoke;
+  }
 </style>
 
 <h1>Example of Range Slider Using JavaScript</h1>
 <p>Use the slider to increment or decrement value.</p>
 
-<div class="rangeSlider">
-  <input class="mySlider" id="sliderRange" max="100" min="1" type="range" value="10">
-  <p>Value: <span id="demo"></span></p>
-</div>
+<input class="rangeSlider" id="sliderRange" max="100" min="1" type="range" value="10">
+<p>Value: <span id="demo"></span></p>
 
-<!--<p>me: <input type="range" min="0" max="100" step="5" value="50"/></p>-->
+<p>me: <input class="rangeSlider" max="100" min="0" step="5" type="range" value="50"/></p>
+
 <script>
   let rangeSlider = document.getElementById('sliderRange')
   let output = document.getElementById('demo')
