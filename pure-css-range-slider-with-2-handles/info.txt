@@ -1,0 +1,5 @@
+For more awesome CSS / HTML/ Javascript Code Examples & scripts visit now:
+
+Demo: https://codeconvey.com/Tutorials/pure-css-range-slider-with-2-handles/
+
+Tutorial: https://codeconvey.com/pure-css-range-slider-with-2-handles/
