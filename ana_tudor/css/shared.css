@@ -1,0 +1,100 @@
+* {
+  font: inherit;
+}
+
+.wrap {
+  --dif: calc(var(--max) - var(--min));
+  font-family: ubuntu mono, consolas, monaco, monospace;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  width: 20em;
+  margin: 1em auto;
+  background: linear-gradient(0deg, #ccc 1em, transparent 0);
+  grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
+  grid-template: repeat(2, max-content) 1em/1fr 1fr;
+}
+
+.wrap::before,
+.wrap::after {
+  height: 100%;
+  content: '';
+  background: #95a;
+  grid-column: 1/span 2;
+  grid-row: 3;
+}
+
+[id=multi-lbl] {
+  grid-column: 1/span 2;
+}
+
+input[type=range] {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+  color: #000;
+  background: none;
+  grid-column: 1/span 2;
+  grid-row: 3;
+}
+
+input[type=range]::-webkit-slider-runnable-track,
+input[type=range]::-webkit-slider-thumb,
+input[type=range] {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 1em;
+  height: 1em;
+  pointer-events: auto;
+  border: none;
+  border-radius: 0;
+  background: currentcolor;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 1em;
+  height: 1em;
+  pointer-events: auto;
+  border: none;
+  border-radius: 0;
+  background: currentcolor;
+}
+
+input[type=range]:focus {
+  z-index: 2;
+  outline: dotted 1px currentcolor;
+}
+
+input[type=range]:focus,
+input[type=range]:focus + output {
+  color: darkorange;
+}
+
+output {
+  grid-row: 2;
+}
+
+output:last-child {
+  text-align: right;
+}
+
+output::after {
+  content: '--' attr(for) ': ' counter(c) ';';
+  counter-reset: c var(--c);
+}

@@ -1,112 +1,11 @@
-* {
-  font: inherit;
-}
-
-.wrap {
-  --dif: calc(var(--max) - var(--min));
-  position: relative;
-  display: grid;
-  grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
-  grid-template: repeat(2, max-content) 1em/1fr 1fr;
-  overflow: hidden;
-  margin: 1em auto;
-  width: 20em;
-  background: linear-gradient(0deg, #ccc 1em, transparent 0);
-  font-family: ubuntu mono, consolas, monaco, monospace;
-}
-
-.wrap::before,
-.wrap::after {
-  grid-column: 1/span 2;
-  grid-row: 3;
-  height: 100%;
-  background: #95a;
-  content: "";
-}
-
 .wrap::before {
+  width: calc((var(--a) - var(--min)) / var(--dif) * 100%);
   /* As 'a' increases, the margin & width increase */
   margin-left: 0;
-  width: calc((var(--a) - var(--min)) / var(--dif) * 100%);
 }
 
 .wrap::after {
+  width: calc((var(--max) - var(--b)) / var(--dif) * 100%);
   /* As 'b' increases, the margin & width decrease */
   margin-left: calc(var(--b) / var(--dif) * 100%);
-  width: calc((var(--max) - var(--b)) / var(--dif) * 100%);
-}
-
-[id=multi-lbl] {
-  grid-column: 1/span 2;
-}
-
-input[type=range] {
-  z-index: 1;
-  top: 0;
-  left: 0;
-  grid-column: 1/span 2;
-  grid-row: 3;
-  margin: 0;
-  background: none;
-  color: #000;
-  pointer-events: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track,
-input[type=range]::-webkit-slider-thumb,
-input[type=range] {
-  -webkit-appearance: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 100%;
-  background: none;
-}
-
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 100%;
-  background: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  border: none;
-  border-radius: 0;
-  width: 1em;
-  height: 1em;
-  background: currentcolor;
-  pointer-events: auto;
-}
-
-input[type=range]::-moz-range-thumb {
-  border: none;
-  border-radius: 0;
-  width: 1em;
-  height: 1em;
-  background: currentcolor;
-  pointer-events: auto;
-}
-
-input[type=range]:focus {
-  z-index: 2;
-  outline: dotted 1px currentcolor;
-}
-
-input[type=range]:focus,
-input[type=range]:focus+output {
-  color: darkorange;
-}
-
-output {
-  grid-row: 2;
-}
-
-output:last-child {
-  text-align: right;
-}
-
-output::after {
-  counter-reset: c var(--c);
-  content: "--"attr(for) ": "counter(c) ";";
 }
