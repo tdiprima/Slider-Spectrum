@@ -11,8 +11,16 @@
   width: 20em;
   margin: 1em auto;
   background: linear-gradient(0deg, #ccc 1em, transparent 0);
-  grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
-  grid-template: repeat(2, max-content) 1em/1fr 1fr;
+
+  /* grid-template: repeat(2, -webkit-max-content) 1em/1fr 1fr;
+  grid-template: repeat(2, max-content) 1em/1fr 1fr; */
+
+  /* Splitting into rows and columns properties for clarity */
+  grid-template-rows: repeat(2, -webkit-max-content) 1em;
+  grid-template-columns: 1fr 1fr;
+
+  /* Non-prefixed version */
+  grid-template-rows: repeat(2, max-content) 1em;
 }
 
 .wrap::before,
